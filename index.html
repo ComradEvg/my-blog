@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<link rel="shortcut icon" href="img/TruckForIconSite.png" type="imgage/png">
+	<link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+	<meta name="author" content="Evgeny Stekolnikov">
+	<title>Truck Company</title>
+</head>
+
+<body>
+	<svg style="display: none;">
+		<symbol viewBox="0 0 476.213 476.213" id="arrow-left">
+			<g>
+				<polygon
+					points="476.213,223.106 57.426,223.106 91.819,188.713 70.606,167.5 0,238.106 70.606,308.713 91.819,287.5 57.426,253.106 476.213,253.106 " />
+			</g>
+		</symbol>
+		<symbol viewBox="0 0 476.213 476.213" id="arrow-right">
+			<g>
+				<polygon
+					points="405.606,167.5 384.394,188.713 418.787,223.106 0,223.106 0,253.106 418.787,253.106 384.394,287.5 405.606,308.713 476.213,238.106 " />
+			</g>
+		</symbol>
+		<symbol viewBox="0 0 30 30" id="vector-plane">
+			<g>
+				<path
+					d="M28.8926 0.0731982L25.718 1.51816C25.5147 1.61199 25.3271 1.74023 25.1676 1.89974L19.9945 7.07597L2.17947 4.93979C1.85733 4.90226 1.53205 5.01173 1.30374 5.24317L0.312277 6.23463C-0.213166 6.76008 -0.0505287 7.64832 0.628168 7.9517L13.3952 13.6753L9.72958 17.3409H3.32731C3.04583 17.3409 2.77685 17.4535 2.57668 17.6505L2.04186 18.1884C1.51016 18.7201 1.68531 19.6177 2.37339 19.9118L7.77481 22.2262L10.0893 27.6276C10.3833 28.3157 11.284 28.4909 11.8126 27.9592L12.3505 27.4212C12.5507 27.221 12.6602 26.9521 12.6602 26.6706V20.2683L16.3258 16.6027L22.0493 29.3729C22.3527 30.0516 23.2409 30.2142 23.7664 29.6888L24.7578 28.6973C24.9893 28.4659 25.0987 28.1437 25.0612 27.8216L22.9219 10.0066L28.0981 4.83036C28.2577 4.67085 28.3859 4.48632 28.4797 4.27989L29.9247 1.10535C30.2281 0.451642 29.5525 -0.227054 28.8926 0.0731982Z" />
+			</g>
+		</symbol>
+		<symbol viewBox="0 0 469.333 469.333" id="finger">
+			
+				<g>
+					<path d="M438.827,186.347l-80.213-88.149c-15.872-15.872-41.728-15.893-57.749,0.128c-5.077,5.077-8.533,11.157-10.325,17.643
+						c-15.957-12.224-38.976-11.008-53.675,3.691c-5.056,5.077-8.512,11.157-10.347,17.621c-15.957-12.181-38.976-10.987-53.653,3.712
+						c-4.971,4.971-8.384,10.901-10.24,17.216l-37.803-37.803c-15.872-15.872-41.728-15.893-57.749,0.128
+						c-15.893,15.872-15.893,41.728,0,57.621l145.237,145.237l-86.144,13.525c-23.275,3.328-40.832,23.552-40.832,47.083
+						c0,17.643,14.357,32,32,32h201.152c31.339,0,60.8-12.203,82.965-34.368l33.557-33.557c22.144-22.123,34.325-51.563,34.325-82.859
+						C469.333,235.989,458.496,207.979,438.827,186.347z M419.925,332.992l-33.557,33.557c-18.133,18.133-42.24,28.117-67.883,28.117
+						H117.333c-5.888,0-10.667-4.779-10.667-10.667c0-12.971,9.685-24.128,22.677-25.984l106.987-16.811
+						c3.968-0.619,7.232-3.413,8.491-7.232c1.237-3.797,0.235-8-2.603-10.837L82.155,163.072c-7.573-7.573-7.573-19.904,0.107-27.605
+						c3.797-3.776,8.768-5.675,13.739-5.675c4.971,0,9.941,1.899,13.739,5.696l106.731,106.731c4.16,4.16,10.923,4.16,15.083,0
+						c2.069-2.091,3.115-4.821,3.115-7.552s-1.045-5.461-3.136-7.552l-43.584-43.584c-7.573-7.573-7.573-19.883,0.128-27.584
+						c7.552-7.552,19.904-7.552,27.456,0l43.605,43.605c4.16,4.16,10.923,4.16,15.083,0c2.069-2.091,3.115-4.821,3.115-7.552
+						c0-2.731-1.045-5.461-3.136-7.552l-22.251-22.251c-7.573-7.573-7.573-19.883,0.128-27.584c7.552-7.552,19.904-7.552,27.456,0
+						l22.357,22.357c0.043,0.021,0.021,0.021,0.021,0.021l0.021,0.021c0.021,0.021,0.021,0.021,0.021,0.021
+						c0.021,0.021,0.021,0.021,0.021,0.021h0.021c0.021,0,0.021,0.021,0.021,0.021c4.181,3.968,10.795,3.883,14.869-0.213
+						c4.16-4.16,4.16-10.923,0-15.083l-0.917-0.917c-3.669-3.669-5.696-8.555-5.696-13.739s2.005-10.048,5.803-13.845
+						c7.595-7.552,19.883-7.531,27.115-0.363l79.872,87.787C439.125,218.389,448,241.301,448,265.216
+						C448,290.816,438.037,314.88,419.925,332.992z" />
+				</g>
+				<g>
+					<path
+						d="M183.381,109.931C167.851,75.563,133.547,53.333,96,53.333c-52.928,0-96,43.072-96,96
+						c0,37.547,22.229,71.851,56.597,87.403c1.429,0.64,2.923,0.939,4.395,0.939c4.053,0,7.936-2.347,9.728-6.272
+						c2.411-5.376,0.021-11.691-5.333-14.123c-26.752-12.096-44.053-38.763-44.053-67.947c0-41.173,33.493-74.667,74.667-74.667
+						c29.184,0,55.851,17.301,67.947,44.053c2.411,5.376,8.747,7.787,14.101,5.333C183.424,121.621,185.813,115.307,183.381,109.931z" />
+				</g>
+		</symbol>
+	</svg>
+	<div class="wrapper">
+		<main class="page">
+<header class="header">
+   <div class="burger"><span></span></div>
+   <div class="header__row header-up">
+      <div class="container">
+         <div class="header-up__row">
+            <div class="header-up__column link">
+               <ul class="link__lang">
+                  <li><a href="#" class="link__item-link active-link">РУС</a></li>
+                  <li><a href="#" class="link__item-link">ENG</a></li>
+                  <li><a href="#" class="link__item-link">FR</a></li>
+               </ul>
+            </div>
+            <div class="header-up__column link">
+               <div class="link__number">
+                  <a href="tel:+788001234567" class="link__item-link">8 (800) 123-45-67</a>
+               </div>
+            </div>
+            <div class="header-up__column link">
+               <div class="link__address">
+                  <a href="mailto:sales@log.ru" class="link__item-link">sales@log.ru</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="header__row header-bottom">
+         <div class="header-bottom__column">
+            <div class="header-bottom__logo logo">
+               <a href="#" class="logo__link">
+                  <img class="logo__link-img" src="img/logo.png" alt="Logo">
+               </a>
+            </div>
+         </div>
+         <div class="header-bottom__column">
+            <div class="header-bottom__geoposition geoposition">
+               <a href="#" class="geoposition__link">
+                  <span class="geoposition__mark"><img class="geoposition__mark-img" src="img/icons/NavigationMark.svg"
+                        alt="MarkNavigation"></span>
+                  Наши офисы
+               </a>
+            </div>
+         </div>
+         <div class="header-bottom__column column-menu">
+            <nav class="header-bottom__menu menu">
+               <ul class="menu__list">
+                  <li><a href="#" class="menu__link">услуги</a></li>
+                  <li><a href="https://mail.ru" class="menu__link">О компании</a></li>
+                  <li><a href="#" class="menu__link">вакансии</a></li>
+                  <li><a href="#" class="menu__link">контакты</a></li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+
+</header>			<div class="main-screen">
+				<div class="main-screen__bg ibg">
+					<img src="img/MainBg.webp" alt="MainBg">
+					<div class="container-main">
+						<div class="main__inner">
+							<h1 class="main__title">
+								Грузовые перевозки
+							</h1>
+							<div class="main__text text">
+								Перевозка крупногабаритных грузов по России и Европе. Полное экспедирование, страхование,
+								упаковка
+								и хранение грузов
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="content">
+				<section class="truck-choise">
+					<div class="container">
+						<div class="truck-choise__row">
+							<div class="truck-choise__column information">
+								<div class="information__row">
+									<div class="information__title title">
+										грузоперевозки
+										по европе
+									</div>
+									<div class="information__text text">
+										Страны Евросоюза, а также Украина,
+										Белоруссия со всеми документами.
+									</div>
+									<div class="information__btn btn"><a href="" class="btn__link">Подробнее</a></div>
+								</div>
+							</div>
+							<div class="truck-choise__column slider">
+								<div class="slider__row">
+									<div class="slider__column"><img data-lazy="img/TruckSlider1.webp"  alt=""></div>
+									<div class="slider__column"><img data-lazy="img/TruckSlider2.jpg" alt=""></div>
+									<div class="slider__column"><img data-lazy="img/TruckSlider3.webp" alt=""></div>
+								</div>
+								<div class="container-arrows">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="servises">
+					<div class="container">
+						<h2 class="servises__title title">услуги</h2>
+						<div class="servises__row">
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+							<div class="servises__column card">
+								<div class="card__icon"><svg class="vector-plane">
+										<use xlink: href="#vector-plane"></use>
+									</svg></div>
+								<div class="card__text">авиаперевозки</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="about">
+					<div class="container">
+						<div class="about-choise__row about-container">
+							<div class="about-choise__column information">
+								<div class="information__row">
+									<div class="information__title title">
+										О компании
+									</div>
+									<div class="information__text text">
+										Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum
+										является стандартной "рыбой" для
+										текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
+										коллекцию размеров и форм
+										шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно
+										пережил без заметных изменений
+										пять веков, но и перешагнул в электронный дизайн.
+									</div>
+								</div>
+							</div>
+							<div class="about-choise__column card-inner">
+								<div class="card-inner__row">
+									<div class="card-inner__column card__about">
+										<div class="card-about__title">
+											48
+											<span>офисов</span>
+										</div>
+										<div class="card-about__text">
+											В Европе и СНГ
+										</div>
+									</div>
+									<div class="card-inner__column flip">
+										<div class="card-flip">
+											<div class="card-flip__front image-box">
+												<img class="image-box__image" src="img/AboutTruck2.webp" alt="AboutTruck">
+											</div>
+											<div class="card-flip__back text-box">
+												<div class="card-about__title">
+													361
+													<span>гузовик</span>
+												</div>
+												<div class="card-about__text">
+													Volvo, Scania
+												</div>
+											</div>
+										</div>
+										<svg class="finger">
+											<use xlink: href="#finger"></use>
+										</svg>
+									</div>
+									<div class="card-inner__column flip">
+										<div class="card-flip">
+											<div class="card-flip__front image-box">
+												<img class="image-box__image" src="img/AboutTruck1.webp" alt="AboutTruck">
+											</div>
+											<div class="card-flip__back text-box">
+												<div class="card-about__title">
+													1500
+													<span>сотрудников</span>
+												</div>
+												<div class="card-about__text">
+													профессионалов
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="map">
+					<iframe class="map__window"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10516.611463732543!2d44.7999279!3d48.7789718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41054c4511c27c77%3A0x155920d76ccc747d!2z0JPQtdGA0JzQtdGB!5e0!3m2!1sru!2sru!4v1628147849303!5m2!1sru!2sru"
+						style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</section>
+			</div>
+<footer class="footer">
+   <div class="container">
+      <div class="footer__row">
+         <div class="footer__column">
+            <div class="footer__logo logo">
+               <a href="#" class="logo__link">
+                  <img class="logo__link-img" src="img/logoB.png" alt="Logo">
+               </a>
+            </div>
+         </div>
+         <div class="footer__column address">
+            <div class="address__row">
+               <div class="address__column">
+                  <address class="address__post">123456, Санкт-Петербург, Невский пр-кт 127</address>
+               </div>
+               <div class="address__column">
+                  <a href="mailto:sales@log.ru" class="address__mail">sales@log.ru</a>
+               </div>
+            </div>
+         </div>
+         <div class="footer__column">
+            <div class="footer__phone phone">
+               <div class="phone__number link">
+                  <a href="tel:+78123445665" class="phone__number-link">+7 (812) 344-56-65</a>
+               </div>
+               <div class="phone__number link">
+                  <a href="tel:+78123555665" class="phone__number-link">+7 (812) 355-56-65</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>		</main>
+	</div>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
