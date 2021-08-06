@@ -105,10 +105,20 @@ h1, h2, h3, h4, h5, h6, address {
   font-display: swap;
 }
 body {
-  font-family: "Roboto";
-  font-weight: normal;
-  color: #fff;
-  background-color: #2f343a;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  padding: 0;
+  margin: 0;
+}
+
+div.btnbg {
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 @media (max-width: 767px), (max-height: 767px) {
