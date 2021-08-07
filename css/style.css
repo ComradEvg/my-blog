@@ -143,7 +143,7 @@ div.btnbg {
 
 .wrapper {
   width: 100%;
-  height: calc(var(--vh)*100);
+  min-height: 100%;
   overflow: hidden;
 }
 
@@ -583,7 +583,6 @@ div.btnbg {
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
   position: relative;
-  top: 115px;
   overflow: hidden;
 }
 .main-screen__bg {
@@ -592,15 +591,4 @@ div.btnbg {
   height: 100%;
   top: 0;
   left: 0;
-}
-@media (max-width: 767px), (max-height: 767px) {
-  .main-screen {
-    top: 50px;
-  }
-}
-
-.container-main {
-  margin: 200px auto;
-  padding: 0 15px;
-  max-width: 950px;
 }
