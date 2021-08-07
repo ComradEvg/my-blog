@@ -8,47 +8,12 @@ $(document).ready(function () {
       });
    }
    ibg();
+   let vh = window.innerHeight*0.01;
+   document.documentElement.style.setProperty('--vh', `${vh}px`)
 
    $('.burger').click(function (event) {
-      $('.burger,.header,.menu,.link__lang').toggleClass('active');
+      $('.burger,.header,.menu').toggleClass('active');
       $('body').toggleClass('lock');
    });
 
-   $('.slider__row').slick({
-      dots: false,
-      autoplay: false,
-      autoplaySpeed: 1000,
-      infinite: true,
-      speed: 500,
-      fade: true,
-      cssEase: 'linear',
-      nextArrow: '<div class="arrow-right-item"><svg class="arrow-right"><use xlink: href = "#arrow-right"></use></svg></div>',
-      prevArrow: '<div class="arrow-left-item"><svg class="arrow-left"><use xlink: href ="#arrow-left"></use></svg></div>',
-      appendArrows: $('.container-arrows'),
-   });
-
-   var ffff = $(window).width();
-
-   if (ffff <= 767) {
-      $('.servises__row').slick({
-         dots: true,
-         autoplay: false,
-         autoplaySpeed: 1000,
-         infinite: true,
-         speed: 500,
-         fade: true,
-         cssEase: 'linear',
-         arrows: false,
-      });
-   } else {
-   }
-
-   $('.card').hover(function (event){
-      $(this).toggleClass('active-card');
-   })
-
-   $('.flip').on('click', function (event) {
-      $(this).toggleClass('active-flip');
-      $('.finger').addClass('finger-none');
-   })
 });
