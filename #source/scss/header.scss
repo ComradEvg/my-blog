@@ -6,25 +6,111 @@
    left: 0;
    height: auto;
    // ПЛАШКА=========================
-   &::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      backdrop-filter: blur(2.5px);
-      -webkit-backdrop-filter: blur(2.5px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      @media (max-width: 767px) {
-         height: 50px;
-         z-index: 0;
+   @media (orientation: portrait) and (max-width: 768px) {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0px;
+         right: 0px;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         background: rgba(255, 255, 255, 0.3);
+         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+         backdrop-filter: blur(3.5px);
+         -webkit-backdrop-filter: blur(3.5px);
+         border: 1px solid rgba(255, 255, 255, 0.18);
+         transition: all 0.3s ease 0s;
+      }
+      height: 50px;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0px;
+         right: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         background: rgba(255, 255, 255, 0.3);
+         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+         backdrop-filter: blur(3.5px);
+         -webkit-backdrop-filter: blur(3.5px);
+         border: 1px solid rgba(255, 255, 255, 0.18);
+         transition: all 0.3s ease 0s;
+      }
+      height: 50px;
+   }
+   @media (orientation: portrait) and (max-width: 768px) {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0px;
+         right: 0px;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         background: rgba(255, 255, 255, 0.3);
+         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+         backdrop-filter: blur(3.5px);
+         -webkit-backdrop-filter: blur(3.5px);
+         border: 1px solid rgba(255, 255, 255, 0.18);
+         transition: all 0.3s ease 0s;
+      }
+      height: 50px;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0px;
+         right: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         background: rgba(255, 255, 255, 0.3);
+         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+         backdrop-filter: blur(3.5px);
+         -webkit-backdrop-filter: blur(3.5px);
+         border: 1px solid rgba(255, 255, 255, 0.18);
+         transition: all 0.3s ease 0s;
+      }
+      height: 50px;
+   }
+   // ===============================
+}
+.header.active{
+   @media (orientation: portrait) and (max-width: 768px) {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 40%;
+         z-index: 1;
       }
    }
-   // ====================================
+   @media (orientation: landscape) and (max-height: 768px) {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 40%;
+         z-index: 1;
+      }
+   }
+   @media (orientation: portrait) and (max-width: 450px) {
+      &::before {
+         width: 70%;
+      }
+   }
+   @media (orientation: landscape) and (max-height: 450px) {
+      &::before {
+         width: 70%;
+      }
+   }
 }
 
 // БУРГЕР=============================
@@ -32,25 +118,53 @@
    display: none;
    & span {
       position: absolute;
-      background-color: #c8a35f;
+      background-color: #1b1b1b;
+      opacity: 0.8;
       left: 0px;
       width: 100%;
       height: 3px;
       top: 14px;
    }
-   @media (max-width: 767px), (max-height: 767px) {
+   @media (orientation: portrait) and (max-width: 768px) {
       position: absolute;
       display: block;
       width: 30px;
       height: 30px;
-      z-index: -1;
+      z-index: 2;
       right: 15px;
       top: 10px;
       &::before,
       &::after {
          content: "";
          position: absolute;
-         background-color: #c8a35f;
+         background-color: #1b1b1b;
+         opacity: 0.8;
+         width: 100%;
+         height: 3px;
+         left: 0;
+         transition: all 0.3s ease 0s;
+      }
+      &::before {
+         top: 0px;
+      }
+      &::after {
+         bottom: 0px;
+      }
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      z-index: 2;
+      right: 15px;
+      top: 10px;
+      &::before,
+      &::after {
+         content: "";
+         position: absolute;
+         background-color: #1b1b1b;
+         opacity: 0.8;
          width: 100%;
          height: 3px;
          left: 0;
@@ -81,31 +195,154 @@
    position: relative;
    width: 100%;
    height: 60px;
+   margin-top: 10px;
+   // ПЛАШКА=========================
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(3.5px);
+      -webkit-backdrop-filter: blur(3.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      @media (orientation: portrait) and (max-width: 768px) {
+         content: none;
+      }
+      @media (orientation: landscape) and (max-height: 768px) {
+         content: none;
+      }
+   }
+   // ===============================
+   @media (orientation: portrait) and (max-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 40%;
+      z-index: 0;
+      margin-top: 0px;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 40%;
+      z-index: 0;
+      margin-top: 0px;
+   }
+   @media (orientation: portrait) and (max-width: 450px) {
+      width: 70%;
+   }
+   @media (orientation: landscape) and (max-height: 450px) {
+      width: 70%;
+   }
 }
 
 .menu {
-   font-family: "Roboto";
+   font-family: "PlayfairDisplay";
    font-size: 18px;
    font-weight: 700;
    color: rgb(27, 27, 27);
    width: 100%;
    height: 100%;
+   transition: all 0.3s ease 0s;
 
    &__list {
       position: absolute;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      @media (orientation: portrait) and (max-width: 768px) {
+         display: block;
+         top: 20%;
+         left: 10%;
+         font-size: 35px;
+      }
+      @media (orientation: landscape) and (max-height: 768px) {
+         display: block;
+         top: 20%;
+         left: 10%;
+         font-size: 35px;
+      }
+      @media (orientation: portrait) and (max-width: 600px) {
+         font-size: 30px;
+      }
+      @media (orientation: landscape) and (max-height: 600px) {
+         font-size: 30px;
+      }
    }
 
    &__item {
+      position: relative;
+      @media (orientation: portrait) and (max-width: 768px) {
+         margin-bottom: 40px;
+      }
+      @media (orientation: landscape) and (max-height: 768px) {
+         margin-bottom: 40px;
+      }
+      @media (orientation: portrait) and (max-width: 380px) {
+         margin-bottom: 30px;
+      }
+      @media (orientation: landscape) and (max-height: 380px) {
+         margin-bottom: 30px;
+      }
    }
 
    &__link {
-      display: block;
+      display: inline-block;
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         background-color: transparent;
+      }
+      &:hover {
+         transition: all 0.3s ease 0s;
+      }
+      &:hover::after {
+         content: "";
+         position: absolute;
+         bottom: -10px;
+         left: 0px;
+         width: 100%;
+         height: 2px;
+         background-color: rgb(27, 27, 27);
+         transition: all 0.3s ease 0s;
+      }
+      
    }
+   @media (orientation: portrait) and (max-width: 768px) {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(19.5px);
+      -webkit-backdrop-filter: blur(19.5px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(19.5px);
+      -webkit-backdrop-filter: blur(19.5px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+   }
+}
+.menu.active {
+   top: 0;
 }

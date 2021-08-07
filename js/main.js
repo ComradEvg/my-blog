@@ -10,7 +10,7 @@ $(document).ready(function () {
    ibg();
 
    $('.burger').click(function (event) {
-      $('.burger,.menu,.link__lang').toggleClass('active');
+      $('.burger,.header,.menu,.link__lang').toggleClass('active');
       $('body').toggleClass('lock');
    });
 
