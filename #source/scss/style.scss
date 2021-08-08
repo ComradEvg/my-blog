@@ -83,32 +83,61 @@ body.lock {
 }
 .main {
    display: flex;
-   justify-content: space-between;
-   align-items: flex-end;
+   justify-content: space-around;
+   align-items:stretch;
    font-family: "PlayfairDisplay";
    font-weight: 700;
 
    &__column {
       font-size: 25px;
       line-height: 37px;
+      
    }
 
    &__name {
-      font-size: 47px;
-      line-height: 59px;
+      font-size: 38px;
+      line-height: 50px;
       text-align: left;
+      color: #fff;
+      
+      
+      
    }
 
    &__skills {
       text-align: center;
+      color: #fff;
+      font-size: 20px;
+      line-height: 37px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      span{
+         display: block;
+      }
    }
 }
+.img{
+         width: 120%;
+         height: 115px;
+         position: absolute;
+         top: -5px;
+         left: -60px;
+         z-index: -1;
+      }
 .name-box {
    flex: 0 0 30%;
+   position: relative;
+   
 }
 .skills-box {
    flex: 0 0 20%;
+   font-weight: 400;
+   position: relative;
+
+   
 }
+
 .card {
    align-self: center;
    width: 50%;
@@ -122,14 +151,15 @@ body.lock {
       text-align: center;
       margin-bottom: 34px;
       opacity: 0;
+      visibility: hidden;
    }
 
    &__about {
       font-size: 18px;
       line-height: 22px;
-      letter-spacing: 0em;
       text-align: center;
       opacity: 0;
+      visibility: hidden;
       p {
          margin-bottom: 50px;
       }
@@ -142,6 +172,8 @@ body.lock {
    }
    &__img-box {
       position: absolute;
+      right: 50%;
+      transform: translateX(50%);
       bottom: 0;
       height: 340px;
       width: 340px;
@@ -149,8 +181,6 @@ body.lock {
    }
    &__img {
       display: block;
-      position: absolute;
-      bottom: 0;
       height: 105%;
    }
 }
@@ -167,6 +197,9 @@ body.lock {
    border-radius: 10px;
    border: 1px solid rgba(255, 255, 255, 0.18);
 }
+.active-card{
+   transition: all 0.5s ease 0s;
+}
 .card.active-card {
    align-self: center;
    width: 100%;
@@ -175,11 +208,25 @@ body.lock {
 }
    .content-card.active-card {
       .card__name{
-      opacity: 1;}
+      opacity: 1;
+      transition: visibility 0.2s ease 0.5s;
+      visibility: visible;
+   }
       .card__about {
       opacity: 1;
+      transition: visibility 0.2s ease 0.5s;
+      visibility: visible;
    }
    }
+.card__img-box.active-card {
+      position: absolute;
+      bottom: 0;
+      right: 80%;
+      height: 450px;
+      width: 450px;
+      overflow: hidden;
+      transform: translateX(none)
+   } 
 
 
 // FOOTER=============================

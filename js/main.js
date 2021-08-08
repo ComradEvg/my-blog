@@ -12,12 +12,12 @@ $(document).ready(function () {
    document.documentElement.style.setProperty('--vh', `${vh}px`)
 
    $('.burger').click(function (event) {
-      $('.burger,.header,.menu').toggleClass('active');
+      $('.burger,.header,.menu,.header__row').toggleClass('active');
       $('body').toggleClass('lock');
    });
 
    $('.card').click(function (event) {
-      $('.card,.card__img,.content-card').toggleClass('active-card');
+      $('.card,.card__img-box,.content-card').toggleClass('active-card');
    });
 
 });

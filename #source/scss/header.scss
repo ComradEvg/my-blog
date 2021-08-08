@@ -220,6 +220,7 @@
    }
    // ===============================
    @media (orientation: portrait) and (max-width: 768px) {
+      display: none;
       position: absolute;
       top: 0;
       right: 0;
@@ -229,6 +230,7 @@
       margin-top: 0px;
    }
    @media (orientation: landscape) and (max-height: 768px) {
+      display: none;
       position: absolute;
       top: 0;
       right: 0;
@@ -345,4 +347,7 @@
 }
 .menu.active {
    top: 0;
+}
+.header__row.active{
+   display: block;
 }
