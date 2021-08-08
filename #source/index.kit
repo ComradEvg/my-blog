@@ -2,40 +2,76 @@
 <html lang="ru">
 
 <head>
-	<link rel="shortcut icon" href="img/icon/Webicon.png" type="imgage/png">
-	<link rel="stylesheet" href="css/style.css">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
-	<meta name="author" content="Evgeny Stekolnikov">
-	<title>My Blog</title>
+    <link rel="shortcut icon" href="img/icon/Webicon.png" type="imgage/png">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+    <meta name="author" content="Evgeny Stekolnikov">
+    <title>My Blog</title>
 
 </head>
 
 <body>
-	<svg style="display: none;">
-	<symbol viewBox="0 0 476.213 476.213" id="arrow-left">
-		<g>
-			<polygon
-				points="476.213,223.106 57.426,223.106 91.819,188.713 70.606,167.5 0,238.106 70.606,308.713 91.819,287.5 57.426,253.106 476.213,253.106 " />
-		</g>
-	</symbol>
-	</svg>
-	<!-- partial:index.partial.html -->
-	<div class="wrapper">
-		<main class="page">
-			<canvas id="sakura" ></canvas>
-			<!-- @import "header.html" -->
-			<div class="main-screen">
-			</div>
-			<div class="content">
-			</div>
-			<!-- @import "footer.html" -->
-		</main>
-	</div>
-
-	<!-- sakura shader -->
-	<script id="sakura_point_vsh" type="x-shader/x_vertex">
+    <svg style="display: none;">
+        <symbol viewBox="0 0 476.213 476.213" id="arrow-left">
+            <g>
+                <polygon
+                    points="476.213,223.106 57.426,223.106 91.819,188.713 70.606,167.5 0,238.106 70.606,308.713 91.819,287.5 57.426,253.106 476.213,253.106 " />
+            </g>
+        </symbol>
+    </svg>
+    <div class="wrapper">
+        
+        <main class="page"><canvas id="sakura"></canvas>
+            <!-- @import "header.html" -->
+            <div class="content">
+                <section class="about">
+                    <div class="container">
+                        <div class="about__row">
+                            <div class="about__column main">
+                                <div class="main__column name-box">
+                                    <h2 class="main__name">Евгений Стекольников</h2>
+                                </div>
+                                <div class="main__column skills-box">
+                                    <p class="main__skills">Веб-разработчик
+                                        23 года, Волгоград
+                                    </p>
+                                </div>
+                                <div class="main__column">что-то тут будет</div>
+                            </div>
+                            <div class="about__column container-card">
+                                <div class="card">
+                                    <div class="content-card">
+                                        <h2 class="card__name">Обо мне</h2>
+                                        <div class="card__about">
+                                            <p>
+                                                Hi, I'm Denis – UX/UI designer from Minsk.
+                                                I'm interested in design and everything connected with it.
+                                            </p>
+                                            <p>
+                                                I'm studying at courses "Web and mobile design
+                                                interfaces" in IT-Academy.
+                                            </p>
+                                            <p>
+                                                Ready to implement excellent projects
+                                                with wonderful people.
+                                            </p>
+                                        </div>
+                                        <a href="#" class="card__link"></a>
+                                    </div>
+                                    <div class="card__img-box"><img class="card__img" src="img/my-photo.png" alt="my-photo"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- @import "footer.html" -->
+        </main>
+    </div>
+    <!-- sakura shader -->
+    <script id="sakura_point_vsh" type="x-shader/x_vertex">
 uniform mat4 uProjection;
 uniform mat4 uModelview;
 uniform vec3 uResolution;
@@ -127,7 +163,7 @@ void main(void) {
     distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
 }
 </script>
-	<script id="sakura_point_fsh" type="x-shader/x_fragment">
+    <script id="sakura_point_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -199,8 +235,8 @@ void main(void) {
     gl_FragColor = vec4(col * 0.5, alpha);
 }
 </script>
-	<!-- effects -->
-	<script id="fx_common_vsh" type="x-shader/x_vertex">
+    <!-- effects -->
+    <script id="fx_common_vsh" type="x-shader/x_vertex">
 uniform vec3 uResolution;
 attribute vec2 aPosition;
 
@@ -213,7 +249,7 @@ void main(void) {
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
 </script>
-	<script id="bg_fsh" type="x-shader/x_fragment">
+    <script id="bg_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -233,7 +269,7 @@ void main(void) {
     gl_FragColor = vec4(col * 0.5, 1.0);
 }
 </script>
-	<script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+    <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -249,7 +285,7 @@ void main(void) {
     gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
 }
 </script>
-	<script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+    <script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -270,8 +306,8 @@ void main(void) {
     gl_FragColor = col / 5.0;
 }
 </script>
-	<!-- effect fragment shader template -->
-	<script id="fx_common_fsh" type="x-shader/x_fragment">
+    <!-- effect fragment shader template -->
+    <script id="fx_common_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -286,8 +322,8 @@ void main(void) {
     gl_FragColor = texture2D(uSrc, texCoord);
 }
 </script>
-	<!-- post processing -->
-	<script id="pp_final_vsh" type="x-shader/x_vertex">
+    <!-- post processing -->
+    <script id="pp_final_vsh" type="x-shader/x_vertex">
 uniform vec3 uResolution;
 attribute vec2 aPosition;
 varying vec2 texCoord;
@@ -298,7 +334,7 @@ void main(void) {
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
 </script>
-	<script id="pp_final_fsh" type="x-shader/x_fragment">
+    <script id="pp_final_fsh" type="x-shader/x_fragment">
 #ifdef GL_ES
 //precision mediump float;
 precision highp float;
@@ -320,12 +356,12 @@ void main(void) {
     gl_FragColor.a = 1.0;
 }
 </script>
-	<!-- partial -->
-	
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/main.js"></script>
+    <!-- partial -->
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

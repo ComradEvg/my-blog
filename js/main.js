@@ -16,4 +16,8 @@ $(document).ready(function () {
       $('body').toggleClass('lock');
    });
 
+   $('.card').click(function (event) {
+      $('.card,.card__img,.content-card').toggleClass('active-card');
+   });
+
 });

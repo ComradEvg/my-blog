@@ -1,40 +1,36 @@
 @import "nullstyle.scss";
 @font-face {
    font-family: "PlayfairDisplay";
-   src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../PlayfairDisplay-Regular.woff") format("woff");
+   src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
+      url("../PlayfairDisplay-Regular.woff") format("woff");
    font-weight: 400;
    font-style: normal;
    font-display: swap;
 }
 @font-face {
-   font-family: "PlayfairDisplay";;
-   src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
+   font-family: "PlayfairDisplay";
+   src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"),
+      url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
    font-weight: 700;
    font-style: normal;
    font-display: swap;
 }
 
 body {
-   font-family: "Roboto";
+   font-family: "PlayfairDisplay";
    font-weight: 400;
    padding: 0;
    margin: 0;
-   overflow: hidden;
 }
 canvas {
    padding: 0;
    margin: 0;
-   position: absolute;
+   position: fixed;
    width: 100%;
    height: 100%;
    top: 0;
    left: 0;
-   z-index: 0;
-}
-div.btnbg {
-   position: fixed;
-   left: 0;
-   top: 0;
+   z-index: -1;
 }
 // ДЛЯ БУРГЕРА
 body.lock {
@@ -62,7 +58,7 @@ body.lock {
    position: absolute;
    width: 100%;
    height: 100%;
-   top: 0;
+   top: 70px;
    left: 0;
    display: flex;
    font-size: 0px;
@@ -72,23 +68,119 @@ body.lock {
 // ШАПКА
 @import "header.scss";
 // =================================
-// ФУЛЛСКРИНОВЫЙ ЭКРАН
-.main-screen {
-   flex: 1 0 100%;
-   position: relative;
-   overflow: hidden;
-   &__bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+// НЕ ЗАБУДЬ ЧТО ШРИФТ ПО УМОЛЧАНИЮ 0 В PAGE
+
+.about {
+   margin-bottom: 50px;
+   padding-top: 40px;
+   &__row {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__column {
    }
 }
+.main {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   font-family: "PlayfairDisplay";
+   font-weight: 700;
 
-// =================================
-// ВСЕ ОСТАЛЬНЫЕ СТРАНИЦЫ КРОМЕ ФУЛЛСКРИНА
-// НЕ ЗАБУДЬ ЧТО ШРИФТ ПО УМОЛЧАНИЮ 0 В PAGE
+   &__column {
+      font-size: 25px;
+      line-height: 37px;
+   }
+
+   &__name {
+      font-size: 47px;
+      line-height: 59px;
+      text-align: left;
+   }
+
+   &__skills {
+      text-align: center;
+   }
+}
+.name-box {
+   flex: 0 0 30%;
+}
+.skills-box {
+   flex: 0 0 20%;
+}
+.card {
+   align-self: center;
+   width: 50%;
+   height: 450px;
+   margin: 0 auto;
+   position: relative;
+   &__name {
+      font-size: 34px;
+      line-height: 42px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin-bottom: 34px;
+      opacity: 0;
+   }
+
+   &__about {
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: center;
+      opacity: 0;
+      p {
+         margin-bottom: 50px;
+      }
+      :last-child {
+         margin: 0;
+      }
+   }
+
+   &__link {
+   }
+   &__img-box {
+      position: absolute;
+      bottom: 0;
+      height: 340px;
+      width: 340px;
+      overflow: hidden;
+   }
+   &__img {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      height: 105%;
+   }
+}
+.content-card {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   width: 90%;
+   padding-left: 30%;
+   background: rgba(255, 255, 255, 0.3);
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+   backdrop-filter: blur(3.5px);
+   -webkit-backdrop-filter: blur(3.5px);
+   border-radius: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.card.active-card {
+   align-self: center;
+   width: 100%;
+   height: 450px;
+   position: relative;
+}
+   .content-card.active-card {
+      .card__name{
+      opacity: 1;}
+      .card__about {
+      opacity: 1;
+   }
+   }
+
 
 // FOOTER=============================
 @import "footer.scss";
