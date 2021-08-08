@@ -48,7 +48,7 @@ body.lock {
 // КОНТЕЙНЕР
 .container {
    max-width: 1130px;
-   padding: 0px 10px;
+   padding: 0px 15px;
    margin: 0 auto;
    height: auto;
 }
@@ -63,7 +63,11 @@ body.lock {
    display: flex;
    font-size: 0px;
    flex-direction: column;
+   @media (max-width: 768px) {
+      top: 50px;
+   }
 }
+
 // ==================================
 // ШАПКА
 @import "header.scss";
@@ -83,15 +87,18 @@ body.lock {
 }
 .main {
    display: flex;
-   justify-content: space-around;
-   align-items:stretch;
+   justify-content: space-between;
+   align-items: stretch;
    font-family: "PlayfairDisplay";
    font-weight: 700;
 
    &__column {
-      font-size: 25px;
-      line-height: 37px;
-      
+      @media (max-width: 905px) {
+         margin: 0px 100px;
+      }
+      @media (max-width: 768px) {
+         margin: 0px;
+      }
    }
 
    &__name {
@@ -99,9 +106,25 @@ body.lock {
       line-height: 50px;
       text-align: left;
       color: #fff;
-      
-      
-      
+      padding-left: 10px;
+      @media (max-width: 1220px) {
+         line-height: 45px;
+      }
+      @media (max-width: 1000px) {
+         font-size: 32px;
+         line-height: 35px;
+      }
+      @media (max-width: 768px) {
+         font-size: 28px;
+         line-height: 33px;
+         padding-left: 0px;
+         margin-bottom: 30px;
+      }
+      span{
+         @media (max-width: 540px) {
+         display: block;
+      }
+      }
    }
 
    &__skills {
@@ -112,30 +135,55 @@ body.lock {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      span{
+      span {
          display: block;
       }
+      @media (max-width: 1220px) {
+         font-size: 18px;
+         line-height: 32px;
+      }
+      @media (max-width: 768px) {
+         font-size: 16px;
+         line-height: 23px;
+         position: static;
+         transform: translateY(0);
+         text-align: left;
+      }
+   }
+   @media (max-width: 1220px) {
+      justify-content: space-around;
+   }
+   @media (max-width: 905px) {
+      justify-content: center;
+      margin: 0px -100px;
+   }
+   @media (max-width: 768px) {
+      display: block;
+      margin: 0;
    }
 }
-.img{
-         width: 120%;
-         height: 115px;
-         position: absolute;
-         top: -5px;
-         left: -60px;
-         z-index: -1;
-      }
+.img {
+   width: 130%;
+   height: 115px;
+   position: absolute;
+   top: -5px;
+   left: -50px;
+   z-index: -1;
+   @media (max-width: 1000px) {
+      height: 120%;
+   }
+   @media (max-width: 768px) {
+      display: none;
+   }
+}
 .name-box {
-   flex: 0 0 30%;
+   flex: 0 2 30%;
    position: relative;
-   
 }
 .skills-box {
-   flex: 0 0 20%;
+   flex: 0 1 20%;
    font-weight: 400;
    position: relative;
-
-   
 }
 
 .card {
@@ -188,7 +236,7 @@ body.lock {
    position: absolute;
    bottom: 0;
    right: 0;
-   width: 90%;
+   width: 100%;
    padding-left: 30%;
    background: rgba(255, 255, 255, 0.3);
    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -197,8 +245,8 @@ body.lock {
    border-radius: 10px;
    border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.active-card{
-   transition: all 0.5s ease 0s;
+.active-card {
+   transition: all 0.5s linear 0s;
 }
 .card.active-card {
    align-self: center;
@@ -206,28 +254,27 @@ body.lock {
    height: 450px;
    position: relative;
 }
-   .content-card.active-card {
-      .card__name{
+.content-card.active-card {
+   .card__name {
       opacity: 1;
       transition: visibility 0.2s ease 0.5s;
       visibility: visible;
    }
-      .card__about {
+   .card__about {
       opacity: 1;
       transition: visibility 0.2s ease 0.5s;
       visibility: visible;
    }
-   }
+}
 .card__img-box.active-card {
-      position: absolute;
-      bottom: 0;
-      right: 80%;
-      height: 450px;
-      width: 450px;
-      overflow: hidden;
-      transform: translateX(none)
-   } 
-
+   position: absolute;
+   bottom: 0;
+   right: 80%;
+   height: 450px;
+   width: 450px;
+   overflow: hidden;
+   transform: translateX(none);
+}
 
 // FOOTER=============================
 @import "footer.scss";
