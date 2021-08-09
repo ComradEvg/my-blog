@@ -120,10 +120,10 @@ body.lock {
          padding-left: 0px;
          margin-bottom: 30px;
       }
-      span{
+      span {
          @media (max-width: 540px) {
-         display: block;
-      }
+            display: block;
+         }
       }
    }
 
@@ -185,51 +185,60 @@ body.lock {
    font-weight: 400;
    position: relative;
 }
-
+// PHOTO AND ABOUT=============================
+.active-card {
+   transition: all 0.4s linear 0s;
+}
 .card {
    align-self: center;
    width: 50%;
    height: 450px;
    margin: 0 auto;
    position: relative;
-   &__name {
-      font-size: 34px;
-      line-height: 42px;
-      letter-spacing: 0em;
-      text-align: center;
-      margin-bottom: 34px;
-      opacity: 0;
-      visibility: hidden;
-   }
-
-   &__about {
-      font-size: 18px;
-      line-height: 22px;
-      text-align: center;
-      opacity: 0;
-      visibility: hidden;
-      p {
-         margin-bottom: 50px;
-      }
-      :last-child {
-         margin: 0;
-      }
-   }
-
-   &__link {
-   }
+   overflow: hidden;
+   transition: overflow 0.5s linear 0s;
    &__img-box {
       position: absolute;
       right: 50%;
-      transform: translateX(50%);
+      transform: translateX(40%);
       bottom: 0;
       height: 340px;
       width: 340px;
       overflow: hidden;
+      z-index: 1;
+      @media (max-width: 768px) {
+         height: 300px;
+         width: 300px;
+      }
+      @media (max-width: 600px) {
+         height: 230px;
+         width: 230px;
+      }
+      @media (max-width: 500px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translateX(-8%);
+      margin: 0 auto;
+   }
    }
    &__img {
       display: block;
       height: 105%;
+   }
+   @media (max-width: 768px) {
+      height: 330px;
+      margin-top: 20px;
+   }
+   @media (max-width: 600px) {
+      height: 240px;
+   }
+    @media (max-width: 500px) {
+      height: auto;
+      display: block;
+      position: relative;
+      width: 100%;
+      overflow: visible;
    }
 }
 .content-card {
@@ -237,43 +246,173 @@ body.lock {
    bottom: 0;
    right: 0;
    width: 100%;
-   padding-left: 30%;
+   padding-left: 35%;
    background: rgba(255, 255, 255, 0.3);
-   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
    backdrop-filter: blur(3.5px);
    -webkit-backdrop-filter: blur(3.5px);
    border-radius: 10px;
    border: 1px solid rgba(255, 255, 255, 0.18);
+   text-align: center;
+   &__name {
+      font-size: 34px;
+      line-height: 42px;
+      margin-bottom: 34px;
+      visibility: hidden;
+      @media (max-width: 768px) {
+         font-size: 16px;
+         line-height: 20px;
+      }
+      @media (max-width: 600px) {
+         margin-bottom: 25px;
+      }
+      @media (max-width: 500px) {
+         font-size: 25px;
+         visibility: visible;
+         opacity: 0;
+      }
+   }
+
+   &__about {
+      font-size: 18px;
+      line-height: 22px;
+      visibility: hidden;
+      @media (max-width: 768px) {
+         font-size: 16px;
+         line-height: 20px;
+      }
+      @media (max-width: 500px) {
+         font-size: 15px;
+         visibility: visible;
+         opacity: 0;
+      }
+      p {
+         margin-bottom: 50px;
+         @media (max-width: 1050px) {
+            margin-bottom: 30px;
+         }
+         @media (max-width: 768px) {
+            margin-bottom: 25px;
+         }
+         @media (max-width: 600px) {
+            margin-bottom: 15px;
+         }
+      }
+      :last-child {
+         margin: 0;
+      }
+   }
+   @media (max-width: 1050px) {
+      padding-left: 40%;
+   }
+   @media (max-width: 850px) {
+      padding-left: 45%;
+   }
+   @media (max-width: 768px) {
+      padding-left: 20%;
+   }
+   @media (max-width: 600px) {
+      padding-left: 10%;
+   }
+   @media (max-width: 500px) {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      padding: 0px 10px;
+      height: auto;
+      z-index: -1;
+      transform: translate(50%, 25%) scale(0.5);
+   }
 }
-.active-card {
-   transition: all 0.5s linear 0s;
-}
+
 .card.active-card {
    align-self: center;
    width: 100%;
    height: 450px;
    position: relative;
-}
-.content-card.active-card {
-   .card__name {
-      opacity: 1;
-      transition: visibility 0.2s ease 0.5s;
-      visibility: visible;
+   overflow: visible;
+   @media (max-width: 768px) {
+      height: 330px;
    }
-   .card__about {
-      opacity: 1;
-      transition: visibility 0.2s ease 0.5s;
-      visibility: visible;
+   @media (max-width: 600px) {
+      height: 300px;
+   }
+   @media (max-width: 500px) {
+      height: auto;
+      display: block;
+      position: static;
    }
 }
 .card__img-box.active-card {
    position: absolute;
    bottom: 0;
-   right: 80%;
+   right: 60%;
    height: 450px;
    width: 450px;
    overflow: hidden;
-   transform: translateX(none);
+   transform: translateX(0);
+   @media (max-width: 768px) {
+      height: 100%;
+      width: 100%;
+      right: 10%;
+   }
+   @media (max-width: 500px) {
+      position: relative;
+      right: 0;
+      z-index: 1;
+      height: 300px;
+      width: 300px;
+   }
+}
+.content-card.active-card {
+   height: auto;
+   .content-card__name {
+      transition: visibility 0.2s linear 0.3s;
+      visibility: visible;
+      @media (max-width: 768px) {
+         font-size: 28px;
+      }
+      @media (max-width: 768px) {
+         font-size: 25px;
+      }
+   }
+   .content-card__about {
+      transition: visibility 0.2s linear 0.3s;
+      visibility: visible;
+      @media (max-width: 600px) {
+         font-size: 15px;
+      }
+   }
+
+   @media (max-width: 768px) {
+      transition: all 0s linear 0.3s;
+      padding-left: 45%;
+   }
+   @media (max-width: 600px) {
+      padding-left: 50%;
+   }
+   @media (max-width: 500px) {
+      padding: 0px;
+      animation-name: animation-about;
+      animation-timing-function: linear;
+      animation-duration: 1.3s;
+      animation-fill-mode: forwards;
+      position: static;
+   }
+}
+
+@keyframes animation-about{
+   0%{
+      transform: translateY(-75%) scale(0.5);
+   }
+   25%{
+      transform: translateY(-25%) scale(0.5);
+   }
+   50%{
+      transform: translateY(-25%) scale(1,0.5);
+   }
+   100%{
+      transform:  translateY(0) scale(1,1);
+   }
 }
 
 // FOOTER=============================
