@@ -315,7 +315,7 @@ function createPointFlowers() {
     pointFlower.fader = Vector3.create(0.0, 10.0, 0.0);
 
     // paramerters: velocity[3], rotate[3]
-    pointFlower.numFlowers = 1600;
+    pointFlower.numFlowers = 200;
     pointFlower.particles = new Array(pointFlower.numFlowers);
     // vertex attributes {position[3], euler_xyz[3], size[1]}
     pointFlower.dataArray = new Float32Array(pointFlower.numFlowers * (3 + 3 + 2));
@@ -353,9 +353,9 @@ function initPointFlowers() {
         var tmpprtcl = pointFlower.particles[i];
 
         //velocity
-        tmpv3.x = symmetryrand() * 0.3 + 0.8;
-        tmpv3.y = symmetryrand() * 0.2 - 1.0;
-        tmpv3.z = symmetryrand() * 0.3 + 0.5;
+        tmpv3.x = symmetryrand() * 0.2 + 0.8;
+        tmpv3.y = symmetryrand() * 0.1 - 1.0;
+        tmpv3.z = symmetryrand() * 0.2 + 0.5;
         Vector3.normalize(tmpv3);
         tmpv = 2.0 + Math.random() * 1.0;
         tmpprtcl.setVelocity(tmpv3.x * tmpv, tmpv3.y * tmpv, tmpv3.z * tmpv);
@@ -771,7 +771,7 @@ function makeCanvasFullScreen(canvas) {
     fullw = Math.max(b.clientWidth, b.scrollWidth, d.scrollWidth, d.clientWidth);
     fullh = Math.max(b.clientHeight, b.scrollHeight, d.scrollHeight, d.clientHeight);
     canvas.width = fullw;
-    canvas.height = fullh;
+    canvas.height = fullh/2;
 }
 
 window.addEventListener('load', function (e) {
