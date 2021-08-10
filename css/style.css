@@ -1178,3 +1178,9 @@ canvas {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+
+.contacts-container {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0 10px;
+}

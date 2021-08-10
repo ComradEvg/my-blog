@@ -8,8 +8,6 @@ $(document).ready(function () {
       });
    }
    ibg();
-   let vh = window.innerHeight*0.01;
-   document.documentElement.style.setProperty('--vh', `${vh}px`)
 
    $('.burger').click(function (event) {
       $('.burger,.header,.menu,.header__row').toggleClass('active');

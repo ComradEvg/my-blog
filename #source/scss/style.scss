@@ -502,6 +502,52 @@ body.lock {
    }
 }
 
+// Contacts===========================
+.contacts {
+
+		&__subtitle {
+		}
+
+		&__btn {
+		}
+
+		&__social-list {
+		}
+}
+.contacts-container{
+   max-width: 360px;
+   margin: 0 auto;
+   padding: 0 10px;
+}
+.social {
+
+		&__item {
+		}
+
+		&__link {
+		}
+}
+.viber-box {
+
+		&__img {
+		}
+}
+.whatsapp-box {
+   &__img {
+		}
+}
+.instagram-box {
+
+		&__img {
+		}
+}
+.vk-box {
+
+		&__img {
+		}
+}
+
+
 // FOOTER=============================
 @import "footer.scss";
 // =================================
