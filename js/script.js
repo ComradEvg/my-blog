@@ -764,6 +764,8 @@ function animate() {
     if (animating) requestAnimationFrame(animate);
     render();
 }
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 function makeCanvasFullScreen(canvas) {
     var b = document.body;
@@ -771,7 +773,7 @@ function makeCanvasFullScreen(canvas) {
     fullw = Math.max(b.clientWidth, b.scrollWidth, d.scrollWidth, d.clientWidth);
     fullh = Math.max(b.clientHeight, b.scrollHeight, d.scrollHeight, d.clientHeight);
     canvas.width = fullw;
-    canvas.height = fullh/2;
+    canvas.height = vh*110;
 }
 
 window.addEventListener('load', function (e) {
