@@ -21,4 +21,9 @@ $(document).ready(function () {
       $('.card,.card__img-box,.content-card').toggleClass('active-card');
    });
 
+   $('.social__link').hover(function (event) {
+      $(this).find('.box-bw').toggleClass('disactive-icon');
+      $(this).find(':first').toggleClass('active-icon');
+   });
+
 });

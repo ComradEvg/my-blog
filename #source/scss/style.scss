@@ -22,7 +22,7 @@ body {
    padding: 0;
    margin: 0;
 }
-canvas{
+canvas {
    padding: 0;
    margin: 0;
    position: fixed;
@@ -489,13 +489,13 @@ body.lock {
          height: 2px;
          background-color: rgb(27, 27, 27);
          transition: all 0.3s ease 0s;
-      }      
+      }
       @media (max-width: 400px) {
          font-size: 20px;
          line-height: 22px;
       }
    }
-   .website__link:hover{
+   .website__link:hover {
       transform: scale(1.1);
       transition: all 0.3s ease 0s;
    }
@@ -503,50 +503,146 @@ body.lock {
 
 // Contacts===========================
 .contacts {
+   margin-bottom: 45px;
+   &__subtitle {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      margin-top: 20px;
+   }
 
-		&__subtitle {
-		}
+   &__btn {
+      width: 180px;
+      height: 42px;
+      margin: 30px auto 0 auto;
+      font-size: 18px;
+      text-align: center;
+      display: block;
+      color: #2196f3;
+      letter-spacing: 1px;
+      overflow: hidden;
+      transition: 0.2s;
+      color: #fff;
+      background-color: #2196f3;
+      box-shadow: 0 0 10px #1785df, 0 0 40px #1785df, 0 0 80px #1785df;
+      border-radius: 8px;
+      &:hover {
+         transform: scale(1.1);
+         transition: all 0.3s ease 0s;
+      }
+   }
 
-		&__btn {
-		}
-
-		&__social-list {
-		}
+   &__social-list {
+      margin-top: 85px;
+   }
 }
-.contacts-container{
-   max-width: 360px;
+.contacts-container {
+   max-width: 340px;
    margin: 0 auto;
    padding: 0 10px;
 }
 .social {
+   display: flex;
+   justify-content: space-between;
+   align-self: center;
+   &__item {
+   }
 
-		&__item {
-		}
-
-		&__link {
-		}
+   &__link {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      width: 40px;
+      height: 40px;
+   }
 }
+.box {
+   width: 40px;
+   height: 40px;
+   padding: 3px;
+   border-radius: 3px;
+   position: absolute;
+   left: 0;
+   
+   svg {
+      width: 34px;
+      height: 34px;
+   }
+}
+.box-bw {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   img {
+   }
+}
+.box-bw.disactive-icon {
+   bottom: 0;
+   left: 0;
+   transition: all 0.5s ease-in-out;
+   z-index: -1;
+}
+
 .viber-box {
-
-		&__img {
-		}
-}
-.whatsapp-box {
+   top: 0;
+   height: 1px;
+   overflow: hidden;
    &__img {
-		}
+   }
 }
+
+.whatsapp-box {
+   top: 0;
+   height: 1px;
+   overflow: hidden;
+   &__img {
+   }
+}
+
 .instagram-box {
-
-		&__img {
-		}
+   top: 0;
+   height: 1px;
+   overflow: hidden;
+   &__img {
+   }
 }
+
 .vk-box {
-
-		&__img {
-		}
+   top: 0;
+   height: 1px;
+   &::before{
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color:  #2787f5;
+   }
+   &__img {
+   }
+}
+.active-icon {
+   height: 40px;
+   overflow: hidden;
+   fill: white;
+   position: relative;
+   transition: all 0.5s ease-in-out;
+}
+.vk-box.active-icon{
+   background-color:#2787f5;
 }
 
-
+.instagram-box.active-icon {
+   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.whatsapp-box.active-icon {
+   background-color:#4AC959;
+}
+.viber-box.active-icon {
+   background-color: #665cac;
+}
 // FOOTER=============================
 @import "footer.scss";
 // =================================

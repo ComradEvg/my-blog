@@ -1178,8 +1178,144 @@ canvas {
   transition: all 0.3s ease 0s;
 }
 
+.contacts {
+  margin-bottom: 45px;
+}
+.contacts__subtitle {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 20px;
+}
+.contacts__btn {
+  width: 180px;
+  height: 42px;
+  margin: 30px auto 0 auto;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  color: #2196f3;
+  letter-spacing: 1px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #fff;
+  background-color: #2196f3;
+  -webkit-box-shadow: 0 0 10px #1785df, 0 0 40px #1785df, 0 0 80px #1785df;
+          box-shadow: 0 0 10px #1785df, 0 0 40px #1785df, 0 0 80px #1785df;
+  border-radius: 8px;
+}
+.contacts__btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.contacts__social-list {
+  margin-top: 85px;
+}
+
 .contacts-container {
-  max-width: 360px;
+  max-width: 340px;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.social__link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+
+.box {
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+}
+.box svg {
+  width: 34px;
+  height: 34px;
+}
+
+.box-bw {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.box-bw.disactive-icon {
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.viber-box {
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+}
+.whatsapp-box {
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+}
+.instagram-box {
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+}
+.vk-box {
+  top: 0;
+  height: 1px;
+}
+.vk-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #2787f5;
+}
+.active-icon {
+  height: 40px;
+  overflow: hidden;
+  fill: white;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.vk-box.active-icon {
+  background-color: #2787f5;
+}
+
+.instagram-box.active-icon {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.whatsapp-box.active-icon {
+  background-color: #4AC959;
+}
+
+.viber-box.active-icon {
+  background-color: #665cac;
 }
