@@ -231,6 +231,39 @@ body.lock {
       display: block;
       height: 105%;
    }
+   &__marker {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      font-size: 12px;
+      span {
+         display: block;
+         position: absolute;
+         top: 19px;
+         left: 0;
+         width: 40px;
+         height: 50px;
+         transform: scale(-1, -1);
+         animation-name: animation-marker;
+         animation-timing-function: ease-in-out;
+         animation-duration: 2.3s;
+         animation-iteration-count: infinite;
+         animation-direction: alternate-reverse;
+         transform-origin: top left;
+         .marker__svg {
+            width: 90%;
+            height: 90%;
+            transform: rotateX(30deg) scale(-1, 1);
+         }
+      }
+      @media (max-width: 500px) {
+         right: 60px;
+      }
+      @media (max-width: 400px) {
+         right: 25px;
+         top: 50px;
+      }
+   }
    @media (max-width: 768px) {
       height: 330px;
       margin-top: 20px;
@@ -430,6 +463,14 @@ body.lock {
       transform: translateY(0) scale(1, 1);
    }
 }
+@keyframes animation-marker {
+   0% {
+      transform: rotate3d(-5, -5, -1, -50deg);
+   }
+   100% {
+      transform: rotate3d(0, 5, 5, -30deg);
+   }
+}
 // Portfolio===============================
 .portfolio {
    &__row {
@@ -563,7 +604,7 @@ body.lock {
    border-radius: 3px;
    position: absolute;
    left: 0;
-   
+
    svg {
       width: 34px;
       height: 34px;
@@ -583,10 +624,24 @@ body.lock {
    z-index: -1;
 }
 
+.viber-bw {
+   padding: 4px;
+}
 .viber-box {
    top: 0;
    height: 1px;
    overflow: hidden;
+   padding: 4px;
+   &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: #665cac;
+   }
    &__img {
    }
 }
@@ -595,6 +650,16 @@ body.lock {
    top: 0;
    height: 1px;
    overflow: hidden;
+   &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: #4ac959;
+   }
    &__img {
    }
 }
@@ -603,6 +668,16 @@ body.lock {
    top: 0;
    height: 1px;
    overflow: hidden;
+   &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+   }
    &__img {
    }
 }
@@ -610,15 +685,15 @@ body.lock {
 .vk-box {
    top: 0;
    height: 1px;
-   &::before{
-      content: '';
+   &::before {
+      content: "";
       position: absolute;
       display: block;
       top: 0;
       left: 0;
       height: 3px;
       width: 100%;
-      background-color:  #2787f5;
+      background-color: #2787f5;
    }
    &__img {
    }
@@ -630,15 +705,18 @@ body.lock {
    position: relative;
    transition: all 0.5s ease-in-out;
 }
-.vk-box.active-icon{
-   background-color:#2787f5;
+.vk-box.active-icon {
+   background-color: #2787f5;
 }
 
 .instagram-box.active-icon {
-   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+   &::before {
+      content: none;
+   }
+   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
 .whatsapp-box.active-icon {
-   background-color:#4AC959;
+   background-color: #4ac959;
 }
 .viber-box.active-icon {
    background-color: #665cac;

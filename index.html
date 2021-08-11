@@ -122,7 +122,9 @@
                                             </p>
                                         </div>
                                     </div>
-
+                                    <div class="card__marker marker">Нажми на <p>фото</p><span><svg class="marker__svg">
+                                        <use xlink: href="#arrow-for-about"></use>
+                                    </svg></span></div>
                                 </div>
                             </div>
                         </div>
@@ -148,11 +150,11 @@
                         <button class="contacts__btn">Связаться</button>
                         <ul class="contacts__social-list social">
                             <li class="social__item">
-                                <a href="#" class="social__link">
+                                <a href="viber://add?number=+79275111076" class="social__link">
                                     <div class="viber-box box "><svg class="viber-box__img">
                                             <use xlink: href="#viber"></use>
                                         </svg></div>
-                                    <div class="box-bw box">
+                                    <div class="box-bw box viber-bw">
                                         <svg class="box-bw__img">
                                             <use xlink: href="#viber"></use>
                                         </svg>
@@ -350,7 +352,7 @@ void main(void) {
     
     float r;
     if(flwrp.x < 0.0) {
-        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.36, 0.96) * 0.5);
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(2.36, 0.96) * 0.5);
     }
     else {
         r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.58, 0.96) * 0.5);
@@ -401,9 +403,9 @@ void main(void) {
     vec3 col;
     float c;
     vec2 tmpv = texCoord * vec2(0.8, 1.0) - vec2(0.95, 1.0);
-    c = exp(-pow(length(tmpv) * 1.8, 2.0));
+    c = exp(-pow(length(tmpv) * 1.6, 2.0));
     col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
-    gl_FragColor = vec4(col * 0.5, 1.0);
+    gl_FragColor = vec4(col * 0.4, 1.0);
 }
 </script>
     <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">

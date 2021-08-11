@@ -795,6 +795,50 @@ canvas {
   display: block;
   height: 105%;
 }
+.card__marker {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  font-size: 12px;
+}
+.card__marker span {
+  display: block;
+  position: absolute;
+  top: 19px;
+  left: 0;
+  width: 40px;
+  height: 50px;
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+  -webkit-animation-name: animation-marker;
+          animation-name: animation-marker;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 2.3s;
+          animation-duration: 2.3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+.card__marker span .marker__svg {
+  width: 90%;
+  height: 90%;
+  -webkit-transform: rotateX(30deg) scale(-1, 1);
+          transform: rotateX(30deg) scale(-1, 1);
+}
+@media (max-width: 500px) {
+  .card__marker {
+    right: 60px;
+  }
+}
+@media (max-width: 400px) {
+  .card__marker {
+    right: 25px;
+    top: 50px;
+  }
+}
 @media (max-width: 768px) {
   .card {
     height: 330px;
@@ -1090,6 +1134,26 @@ canvas {
             transform: translateY(0) scale(1, 1);
   }
 }
+@-webkit-keyframes animation-marker {
+  0% {
+    -webkit-transform: rotate3d(-5, -5, -1, -50deg);
+            transform: rotate3d(-5, -5, -1, -50deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 5, 5, -30deg);
+            transform: rotate3d(0, 5, 5, -30deg);
+  }
+}
+@keyframes animation-marker {
+  0% {
+    -webkit-transform: rotate3d(-5, -5, -1, -50deg);
+            transform: rotate3d(-5, -5, -1, -50deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 5, 5, -30deg);
+            transform: rotate3d(0, 5, 5, -30deg);
+  }
+}
 .portfolio__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1266,20 +1330,55 @@ canvas {
   z-index: -1;
 }
 
+.viber-bw {
+  padding: 4px;
+}
+
 .viber-box {
   top: 0;
   height: 1px;
   overflow: hidden;
+  padding: 4px;
+}
+.viber-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #665cac;
 }
 .whatsapp-box {
   top: 0;
   height: 1px;
   overflow: hidden;
 }
+.whatsapp-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #4ac959;
+}
 .instagram-box {
   top: 0;
   height: 1px;
   overflow: hidden;
+}
+.instagram-box::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
 .vk-box {
   top: 0;
@@ -1309,11 +1408,14 @@ canvas {
 }
 
 .instagram-box.active-icon {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+.instagram-box.active-icon::before {
+  content: none;
 }
 
 .whatsapp-box.active-icon {
-  background-color: #4AC959;
+  background-color: #4ac959;
 }
 
 .viber-box.active-icon {
