@@ -315,7 +315,7 @@ function createPointFlowers() {
     pointFlower.fader = Vector3.create(0.0, 10.0, 0.0);
 
     // paramerters: velocity[3], rotate[3]
-    pointFlower.numFlowers = 200;
+    pointFlower.numFlowers = 180;
     pointFlower.particles = new Array(pointFlower.numFlowers);
     // vertex attributes {position[3], euler_xyz[3], size[1]}
     pointFlower.dataArray = new Float32Array(pointFlower.numFlowers * (3 + 3 + 2));
@@ -775,7 +775,6 @@ window.addEventListener('load', function (e) {
         console.error(e);
         return;
     }
-
 
     setViewports();
     createScene();
