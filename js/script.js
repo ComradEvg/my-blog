@@ -742,13 +742,7 @@ function render() {
 }
 
 var animating = true;
-function toggleAnimation(elm) {
-    animating ^= true;
-    if (animating) animate();
-    if (elm) {
-        elm.innerHTML = animating ? "Stop" : "Start";
-    }
-}
+
 
 function stepAnimation() {
     if (!animating) animate();
@@ -763,15 +757,12 @@ function animate() {
     if (animating) requestAnimationFrame(animate);
     render();
 }
-let vh = window.innerHeight * 0.01;
-
 function makeCanvasFullScreen(canvas) {
     var b = document.body;
     var d = document.documentElement;
     fullw = Math.max(b.clientWidth, b.scrollWidth, d.scrollWidth, d.clientWidth);
-    fullh = Math.max(b.clientHeight, b.scrollHeight, d.scrollHeight, d.clientHeight);
     canvas.width = fullw;
-    canvas.height = vh*110;
+    canvas.height = screen.height;
 }
 
 window.addEventListener('load', function (e) {
@@ -785,7 +776,6 @@ window.addEventListener('load', function (e) {
         return;
     }
 
-    window.addEventListener('resize', onResize);
 
     setViewports();
     createScene();
