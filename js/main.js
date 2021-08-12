@@ -11,7 +11,7 @@ $(document).ready(function () {
          const href = this.getAttribute('href').substring(1)
          const scrollTarget = document.getElementById(href)
 
-         const topOffset = 0
+         const topOffset = document.querySelector('.header').clientHeight
          const elementPosition = scrollTarget.getBoundingClientRect().top
          const offsetPosition = elementPosition - topOffset
 
@@ -22,12 +22,28 @@ $(document).ready(function () {
       })
    });
 
+   window.addEventListener('scroll', () =>{
+      let scrollDistance = window.scrollY - document.querySelector('.header').clientHeight;
+      console.log(scrollDistance);
+      document.querySelectorAll('.anchor').forEach((el, i) => {
+         if(el.offsetTop<=scrollDistance){
+            console.log(el.offsetTop);
+            document.querySelectorAll('.menu__list a').forEach((el)=>{
+               if(el.classList.contains('active-nav')){
+                  el.classList.remove('active-nav');
+               }
+            });
+            document.querySelectorAll('.menu__list li')[i].querySelector('a').classList.add('active-nav');
+         }
+      });
+   });
+
    $('.burger').on('click', function (event) {
       $('.burger,.header,.menu,.header__row').toggleClass('active');
       $('body').toggleClass('lock');
    });
 
-   $('.card').on('click', function (event) {
+   $('.card,#about-me-nav').on('click', function (event) {
       $('.card,.card__img-box,.content-card').toggleClass('active-card');
       $('.card__marker').remove();
    });

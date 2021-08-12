@@ -258,6 +258,12 @@ canvas {
   height: auto;
 }
 
+.anchor {
+  position: relative;
+  width: 100%;
+  height: 1px;
+}
+
 .page {
   position: absolute;
   width: 100%;
@@ -277,6 +283,9 @@ canvas {
   .page {
     top: 50px;
   }
+}
+.page .anchor {
+  top: -70px;
 }
 
 .header {
@@ -599,6 +608,16 @@ canvas {
   position: absolute;
   background-color: transparent;
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .menu__link::after {
+    content: none;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .menu__link::after {
+    content: none;
+  }
+}
 .menu__link:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -613,6 +632,16 @@ canvas {
   background-color: #1b1b1b;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+@media (orientation: portrait) and (max-width: 768px) {
+  .menu__link:hover::after {
+    content: none;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .menu__link:hover::after {
+    content: none;
+  }
 }
 @media (orientation: portrait) and (max-width: 768px) {
   .menu {
@@ -649,6 +678,34 @@ canvas {
   display: block;
 }
 
+.active-nav {
+  -webkit-animation: neon-1 0.5s ease-in-out infinite alternate;
+          animation: neon-1 0.5s ease-in-out infinite alternate;
+  background-color: #2196f3;
+  border-radius: 30%;
+}
+
+@-webkit-keyframes neon-1 {
+  from {
+    -webkit-box-shadow: 0 0 6px rgba(33, 150, 243, 0.92), 0 0 30px rgba(33, 150, 243, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+            box-shadow: 0 0 6px rgba(33, 150, 243, 0.92), 0 0 30px rgba(33, 150, 243, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+  }
+  to {
+    -webkit-box-shadow: 0 0 6px rgba(33, 150, 243, 0.98), 0 0 30px rgba(33, 150, 243, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #fff;
+            box-shadow: 0 0 6px rgba(33, 150, 243, 0.98), 0 0 30px rgba(33, 150, 243, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #fff;
+  }
+}
+
+@keyframes neon-1 {
+  from {
+    -webkit-box-shadow: 0 0 6px rgba(33, 150, 243, 0.92), 0 0 30px rgba(33, 150, 243, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+            box-shadow: 0 0 6px rgba(33, 150, 243, 0.92), 0 0 30px rgba(33, 150, 243, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+  }
+  to {
+    -webkit-box-shadow: 0 0 6px rgba(33, 150, 243, 0.98), 0 0 30px rgba(33, 150, 243, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #fff;
+            box-shadow: 0 0 6px rgba(33, 150, 243, 0.98), 0 0 30px rgba(33, 150, 243, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #fff;
+  }
+}
 .section {
   margin-bottom: 50px;
 }
@@ -670,6 +727,11 @@ canvas {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.about .anchor {
+  position: absolute;
+  top: 5px;
+}
+
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -824,6 +886,7 @@ canvas {
   overflow: hidden;
   -webkit-transition: overflow 0.5s linear 0s;
   transition: overflow 0.5s linear 0s;
+  cursor: pointer;
 }
 .card__img-box {
   position: absolute;
@@ -1221,6 +1284,9 @@ canvas {
             transform: rotate3d(0, 5, 5, -30deg);
   }
 }
+.portfolio {
+  position: relative;
+}
 .portfolio__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1244,6 +1310,10 @@ canvas {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.portfolio .anchor {
+  top: 500px;
+  position: absolute;
 }
 
 .title {
@@ -1344,6 +1414,9 @@ canvas {
 }
 .contacts__social-list {
   margin-top: 85px;
+}
+.contacts .anchor {
+  top: -480px;
 }
 
 .contacts-container {

@@ -85,7 +85,8 @@ body.lock {
          background-color: #2196f3;
          border-radius: 50%;
          z-index: 10;
-         box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3, 0 0 40px #2196f3, 0 0 50px #2196f3, 0 0 60px #2196f3,0 0 70px #2196f3, 0 0 80px #2196f3, 0 0 90px #2196f3, 0 0 100px #2196f3;
+         box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3, 0 0 40px #2196f3, 0 0 50px #2196f3,
+            0 0 60px #2196f3, 0 0 70px #2196f3, 0 0 80px #2196f3, 0 0 90px #2196f3, 0 0 100px #2196f3;
       }
       span {
          position: absolute;
@@ -141,6 +142,11 @@ body.lock {
    height: auto;
 }
 // ==================================
+.anchor {
+   position: relative;
+   width: 100%;
+   height: 1px;
+}
 // ОБОЛОЧКА ДЛЯ СОЗДАНИЯ ФУЛСКРИНА
 .page {
    position: absolute;
@@ -153,6 +159,9 @@ body.lock {
    flex-direction: column;
    @media (max-width: 768px) {
       top: 50px;
+   }
+   .anchor {
+      top: -70px;
    }
 }
 
@@ -177,6 +186,10 @@ body.lock {
    }
 
    &__column {
+   }
+   .anchor {
+      position: absolute;
+      top: 5px;
    }
 }
 .main {
@@ -291,6 +304,7 @@ body.lock {
    position: relative;
    overflow: hidden;
    transition: overflow 0.5s linear 0s;
+   cursor: pointer;
    &__img-box {
       position: absolute;
       right: 50%;
@@ -562,6 +576,7 @@ body.lock {
 }
 // Portfolio===============================
 .portfolio {
+   position: relative;
    &__row {
       display: flex;
       flex-direction: column;
@@ -572,8 +587,10 @@ body.lock {
       flex-direction: column;
       align-items: center;
    }
-}
-.container {
+   .anchor {
+      top: 500px;
+      position: absolute;
+   }
 }
 .title {
    font-size: 34px;
@@ -664,6 +681,9 @@ body.lock {
 
    &__social-list {
       margin-top: 85px;
+   }
+   .anchor {
+      top: -480px;
    }
 }
 .contacts-container {
@@ -803,7 +823,8 @@ body.lock {
    }
    @media (orientation: portrait) and (max-width: 768px) {
       &::before {
-      content: none}
+         content: none;
+      }
       height: 40px;
       overflow: hidden;
       fill: white;
@@ -811,7 +832,8 @@ body.lock {
    }
    @media (orientation: landscape) and (max-height: 768px) {
       &::before {
-      content: none}
+         content: none;
+      }
       height: 40px;
       overflow: hidden;
       fill: white;
