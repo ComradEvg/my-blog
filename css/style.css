@@ -88,15 +88,6 @@ h1, h2, h3, h4, h5, h6, address {
   font-style: inherit;
 }
 
-.ibg {
-  background-position: 75% 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.ibg img {
-  display: none;
-}
-
 @font-face {
   font-family: "PlayfairDisplay";
   src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../PlayfairDisplay-Regular.woff") format("woff");
@@ -140,6 +131,126 @@ canvas {
   overflow: hidden;
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 60;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.preloader .loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-animation: anime-loader 2s linear infinite;
+          animation: anime-loader 2s linear infinite;
+  z-index: 11;
+}
+.preloader .loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(rgba(33, 150, 243, 0.4)));
+  background: linear-gradient(to top, transparent, rgba(33, 150, 243, 0.4));
+  background-size: 100px 105px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.preloader .loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #2196f3;
+  border-radius: 50%;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3, 0 0 40px #2196f3, 0 0 50px #2196f3, 0 0 60px #2196f3, 0 0 70px #2196f3, 0 0 80px #2196f3, 0 0 90px #2196f3, 0 0 100px #2196f3;
+          box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3, 0 0 40px #2196f3, 0 0 50px #2196f3, 0 0 60px #2196f3, 0 0 70px #2196f3, 0 0 80px #2196f3, 0 0 90px #2196f3, 0 0 100px #2196f3;
+}
+.preloader .loader span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.preloader::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.preloader::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@-webkit-keyframes anime-loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes anime-loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.preloader.complete::before {
+  left: -50%;
+}
+
+.preloader.complete::after {
+  right: -50%;
+}
+
+.loader.complete {
+  display: none;
+}
+
 .container {
   max-width: 1130px;
   padding: 0px 15px;
@@ -175,50 +286,6 @@ canvas {
   top: 0;
   left: 0;
   height: auto;
-}
-@media (orientation: portrait) and (max-width: 768px) {
-  .header {
-    height: 50px;
-  }
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-}
-@media (orientation: landscape) and (max-height: 768px) {
-  .header {
-    height: 50px;
-  }
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
 }
 @media (orientation: portrait) and (max-width: 768px) {
   .header {
@@ -1322,6 +1389,19 @@ canvas {
   bottom: 0;
   left: 0;
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .box-bw {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .box-bw {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .box-bw.disactive-icon {
   bottom: 0;
   left: 0;
@@ -1350,6 +1430,23 @@ canvas {
   width: 100%;
   background-color: #665cac;
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .viber-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background-color: #665cac;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .viber-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background-color: #665cac;
+  }
+}
+
 .whatsapp-box {
   top: 0;
   height: 1px;
@@ -1365,6 +1462,23 @@ canvas {
   width: 100%;
   background-color: #4ac959;
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .whatsapp-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background-color: #4ac959;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .whatsapp-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background-color: #4ac959;
+  }
+}
+
 .instagram-box {
   top: 0;
   height: 1px;
@@ -1380,6 +1494,29 @@ canvas {
   width: 100%;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .instagram-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  }
+  .instagram-box::before {
+    content: none;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .instagram-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  }
+  .instagram-box::before {
+    content: none;
+  }
+}
+
 .vk-box {
   top: 0;
   height: 1px;
@@ -1394,6 +1531,23 @@ canvas {
   width: 100%;
   background-color: #2787f5;
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .vk-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background-color: #2787f5;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .vk-box {
+    height: 40px;
+    overflow: hidden;
+    fill: white;
+    background-color: #2787f5;
+  }
+}
+
 .active-icon {
   height: 40px;
   overflow: hidden;
@@ -1401,6 +1555,16 @@ canvas {
   position: relative;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+@media (orientation: portrait) and (max-width: 768px) {
+  .active-icon {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .active-icon {
+    display: none;
+  }
 }
 
 .vk-box.active-icon {

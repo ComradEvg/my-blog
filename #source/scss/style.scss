@@ -43,7 +43,96 @@ body.lock {
    min-height: 100%;
    overflow: hidden;
 }
-
+.preloader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transition: 1s;
+   z-index: 60;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      animation: anime-loader 2s linear infinite;
+      z-index: 11;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 50%;
+         height: 100%;
+         background: linear-gradient(to top, transparent, rgba(33, 150, 243, 0.4));
+         background-size: 100px 105px;
+         background-repeat: no-repeat;
+         border-top-left-radius: 100px;
+         border-bottom-left-radius: 100px;
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 10px;
+         height: 10px;
+         background-color: #2196f3;
+         border-radius: 50%;
+         z-index: 10;
+         box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3, 0 0 40px #2196f3, 0 0 50px #2196f3, 0 0 60px #2196f3,0 0 70px #2196f3, 0 0 80px #2196f3, 0 0 90px #2196f3, 0 0 100px #2196f3;
+      }
+      span {
+         position: absolute;
+         top: 10px;
+         left: 10px;
+         right: 10px;
+         bottom: 10px;
+         background-color: #000;
+         border-radius: 50%;
+      }
+   }
+   &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #000;
+      transition: 1s;
+   }
+   &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #000;
+      transition: 1s;
+   }
+}
+@keyframes anime-loader {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+.preloader.complete::before {
+   left: -50%;
+}
+.preloader.complete::after {
+   right: -50%;
+}
+.loader.complete {
+   display: none;
+}
 // КОНТЕЙНЕР
 .container {
    max-width: 1130px;
@@ -616,6 +705,14 @@ body.lock {
    left: 0;
    img {
    }
+   @media (orientation: portrait) and (max-width: 768px) {
+      opacity: 0;
+      visibility: hidden;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      opacity: 0;
+      visibility: hidden;
+   }
 }
 .box-bw.disactive-icon {
    bottom: 0;
@@ -644,6 +741,18 @@ body.lock {
    }
    &__img {
    }
+   @media (orientation: portrait) and (max-width: 768px) {
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background-color: #665cac;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background-color: #665cac;
+   }
 }
 
 .whatsapp-box {
@@ -661,6 +770,18 @@ body.lock {
       background-color: #4ac959;
    }
    &__img {
+   }
+   @media (orientation: portrait) and (max-width: 768px) {
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background-color: #4ac959;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background-color: #4ac959;
    }
 }
 
@@ -680,6 +801,22 @@ body.lock {
    }
    &__img {
    }
+   @media (orientation: portrait) and (max-width: 768px) {
+      &::before {
+      content: none}
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      &::before {
+      content: none}
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+   }
 }
 
 .vk-box {
@@ -697,6 +834,18 @@ body.lock {
    }
    &__img {
    }
+   @media (orientation: portrait) and (max-width: 768px) {
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background-color: #2787f5;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      height: 40px;
+      overflow: hidden;
+      fill: white;
+      background-color: #2787f5;
+   }
 }
 .active-icon {
    height: 40px;
@@ -704,6 +853,12 @@ body.lock {
    fill: white;
    position: relative;
    transition: all 0.5s ease-in-out;
+   @media (orientation: portrait) and (max-width: 768px) {
+      display: none;
+   }
+   @media (orientation: landscape) and (max-height: 768px) {
+      display: none;
+   }
 }
 .vk-box.active-icon {
    background-color: #2787f5;

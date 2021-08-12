@@ -624,7 +624,6 @@ function initPostProcess() {
 }
 
 function renderPostProcess() {
-    gl.enable(gl.TEXTURE_2D);
     gl.disable(gl.DEPTH_TEST);
     var bindRT = function (rt, isclear) {
         gl.bindFramebuffer(gl.FRAMEBUFFER, rt.frameBuffer);
@@ -765,7 +764,6 @@ function animate() {
     render();
 }
 let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 function makeCanvasFullScreen(canvas) {
     var b = document.body;

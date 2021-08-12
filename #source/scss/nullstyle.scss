@@ -49,20 +49,3 @@ a {
 }
 
 h1,h2,h3,h4,h5,h6,address{font-size: inherit;font-weight: 400; font-style: inherit;}
-
-// ПЕРЕМЕННЫЕ
-$mw: 1095px;
-$md1:$mw+12;
-$md2:992.98;
-$md3:767.98;
-$md4:479.98;
-// ПЕРЕМЕННЫЕ
-
-// ВСТАВКА КАРТИНОК ФОНОМ
-.ibg{
-background-position: 75% 0;
-background-size: cover;
-background-repeat: no-repeat;
-   img{display: none;}
-}
-// =========================
