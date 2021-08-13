@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             loaderform.classList.remove('_sending');
          }
          else {
-            alert("Ошибка");
+            alert("Ошибкааа");
             loaderform.classList.remove('_sending');
          }
       }
