@@ -655,6 +655,7 @@ body.lock {
 // Contacts===========================
 .contacts {
    margin-bottom: 45px;
+   position: relative;
    &__subtitle {
       font-size: 18px;
       line-height: 22px;
@@ -695,6 +696,109 @@ body.lock {
    margin: 0 auto;
    padding: 0 10px;
 }
+// Form==========================================
+.form {
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 2;
+   font-size: 18px;
+   background: rgba(255, 255, 255, 0.3);
+   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+   backdrop-filter: blur(3.5px);
+   border-radius: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.18);
+
+   &__body {
+      position: relative;
+      .loader-box {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: rgba(0, 0, 0, 0.6);
+         border-radius: 10px;
+         z-index: 2;
+         opacity: 0;
+         visibility: hidden;
+         .loaderform {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            animation: anime-loader 2s linear infinite;
+            &::before {
+               content: "";
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 50%;
+               height: 100%;
+               background: linear-gradient(to top, transparent, rgba(33, 150, 243, 0.4));
+               background-size: 100px 30px;
+               background-repeat: no-repeat;
+               border-top-left-radius: 100px;
+               border-bottom-left-radius: 100px;
+            }
+            &::after {
+               content: "";
+               position: absolute;
+               top: 0;
+               left: 50%;
+               transform: translateX(-50%);
+               width: 10px;
+               height: 10px;
+               background-color: #2196f3;
+               border-radius: 50%;
+               z-index: 10;
+               box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
+            }
+            span {
+               position: absolute;
+               top: 10px;
+               left: 10px;
+               right: 10px;
+               bottom: 10px;
+               background-color: rgba(0, 0, 0, 0.6);
+               border-radius: 50%;
+            }
+         }
+      }
+   }
+
+   &__title {
+      margin-bottom: 20px;
+   }
+
+   &__item {
+   }
+
+   &__label {
+   }
+
+   &__input {
+      padding: 0 20px;
+      height: 40px;
+      margin-bottom: 10px;
+      background-color: transparent;
+      border: 1px solid #000;
+   }
+
+   &__button {
+   }
+   textarea {
+      resize: none;
+      padding: 20px 20px;
+   }
+}
+.form__input._error {
+   box-shadow: 0 0 15px red;
+}
+// ===============================================
 .social {
    display: flex;
    justify-content: space-between;
@@ -727,8 +831,6 @@ body.lock {
    position: absolute;
    bottom: 0;
    left: 0;
-   img {
-   }
    @media (orientation: portrait) and (max-width: 768px) {
       opacity: 0;
       visibility: hidden;
@@ -763,8 +865,6 @@ body.lock {
       width: 100%;
       background-color: #665cac;
    }
-   &__img {
-   }
    @media (orientation: portrait) and (max-width: 768px) {
       height: 40px;
       overflow: hidden;
@@ -793,8 +893,6 @@ body.lock {
       width: 100%;
       background-color: #4ac959;
    }
-   &__img {
-   }
    @media (orientation: portrait) and (max-width: 768px) {
       height: 40px;
       overflow: hidden;
@@ -822,8 +920,6 @@ body.lock {
       height: 3px;
       width: 100%;
       background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-   }
-   &__img {
    }
    @media (orientation: portrait) and (max-width: 768px) {
       &::before {
@@ -857,8 +953,6 @@ body.lock {
       height: 3px;
       width: 100%;
       background-color: #2787f5;
-   }
-   &__img {
    }
    @media (orientation: portrait) and (max-width: 768px) {
       height: 40px;

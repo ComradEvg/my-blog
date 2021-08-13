@@ -1365,6 +1365,7 @@ canvas {
 
 .contacts {
   margin-bottom: 45px;
+  position: relative;
 }
 .contacts__subtitle {
   font-size: 18px;
@@ -1407,6 +1408,111 @@ canvas {
   max-width: 340px;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+.form {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.form__body {
+  position: relative;
+}
+.form__body .loader-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+.form__body .loader-box .loaderform {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-animation: anime-loader 2s linear infinite;
+          animation: anime-loader 2s linear infinite;
+}
+.form__body .loader-box .loaderform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(rgba(33, 150, 243, 0.4)));
+  background: linear-gradient(to top, transparent, rgba(33, 150, 243, 0.4));
+  background-size: 100px 30px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.form__body .loader-box .loaderform::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #2196f3;
+  border-radius: 50%;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
+          box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
+}
+.form__body .loader-box .loaderform span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+}
+.form__title {
+  margin-bottom: 20px;
+}
+.form__input {
+  padding: 0 20px;
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 1px solid #000;
+}
+.form textarea {
+  resize: none;
+  padding: 20px 20px;
+}
+
+.form__input._error {
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
 }
 
 .social {

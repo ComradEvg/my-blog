@@ -153,6 +153,25 @@
                         <p class="contacts__subtitle">Want to know more or just chat?
                         You are welcome!</p>
                         <button class="contacts__btn">Связаться</button>
+                        <div class="form">
+                            <form action="#" id="form" class="form__body">
+                                <div class='loader-box'id="loader-form"><div class="loaderform"><span></span></div></div>
+                                <h3 class="form__title">Отправка данных на почту</h3>
+                                <div class="form__item">
+                                    <label for="formName" class="form__label">Имя*:</label>
+                                    <input id="formName" type="text" name="name" class="form__input _req">
+                                </div>
+                                <div class="form__item">
+                                    <label for="formEmail" class="form__label">Email*:</label>
+                                    <input id="formEmail" type="text" name="email" class="form__input _req _email">
+                                </div>
+                                <div class="form__item">
+                                    <label for="formMessage" class="form__label">Сообщение:</label>
+                                    <textarea name="message" id="formMessage" class="form__input"></textarea>
+                                </div>
+                                <button type="submit" class="form__button">Отправить</button>
+                            </form>
+                        </div>
                         <ul class="contacts__social-list social">
                             <li class="social__item">
                                 <a href="viber://add?number=+79275111076" class="social__link" target="_blank">
