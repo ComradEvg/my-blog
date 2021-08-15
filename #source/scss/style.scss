@@ -312,7 +312,7 @@ body.lock {
    &__img-box {
       position: absolute;
       right: 50%;
-      transform: translateX(40%);
+      transform: translateX(50%);
       bottom: 0;
       height: 340px;
       width: 340px;
@@ -323,20 +323,20 @@ body.lock {
          width: 300px;
       }
       @media (max-width: 600px) {
-         height: 230px;
-         width: 230px;
+         height: 200px;
+         width: 200px;
       }
       @media (max-width: 500px) {
          position: relative;
          top: 0;
          left: 0;
-         transform: translateX(-8%);
+         transform: translateX(0);
          margin: 0 auto;
       }
    }
    &__img {
       display: block;
-      height: 105%;
+      height: 100%;
    }
    &__marker {
       position: absolute;
@@ -360,15 +360,16 @@ body.lock {
          .marker__svg {
             width: 90%;
             height: 90%;
-            transform: rotateX(30deg) scale(-1, 1);
+            transform: translate(20%, -10%) rotateX(30deg) scale(-1, 1);
          }
       }
       @media (max-width: 500px) {
-         right: 60px;
+         right: 52px;
+         top: 60px;
       }
       @media (max-width: 400px) {
-         right: 25px;
-         top: 50px;
+         right: 10px;
+         top: 60px;
       }
    }
    @media (max-width: 768px) {
@@ -594,7 +595,27 @@ body.lock {
    .anchor {
       top: 500px;
       position: absolute;
+      @media (orientation: portrait) and (max-width: 768px) {
+         top: 30px;
+      }
+      @media (orientation: landscape) and (max-height: 768px) {
+         top: 30px;
+      }
+      @media (orientation: portrait) and (max-width: 650px) {
+         top: 300px;
+      }
+      @media (orientation: landscape) and (max-height: 650px) {
+         top: 300px;
+      }
+      @media (orientation: portrait) and (max-width: 500px) {
+         top: 530px;
+      }
+      @media (orientation: landscape) and (max-height: 500px) {
+         top: 530px;
+      }
+      
    }
+
 }
 .title {
    font-size: 34px;
@@ -688,6 +709,19 @@ body.lock {
    }
    .anchor {
       top: -480px;
+      @media (orientation: portrait) and (max-width: 650px) {
+         top: 0px;
+      }
+      @media (orientation: landscape) and (max-height: 650px) {
+         top: 0px;
+      }
+      @media (orientation: portrait) and (max-width: 600px) {
+         top: -70px;
+      }
+      @media (orientation: landscape) and (max-height: 600px) {
+         top: -70px;
+      }
+      
    }
 }
 .contacts-container {
@@ -696,7 +730,7 @@ body.lock {
    padding: 0 10px;
 }
 // Form==========================================
-.form-inner{
+.form-inner {
    position: fixed;
    top: 0;
    left: 0;
@@ -705,7 +739,7 @@ body.lock {
    display: none;
    z-index: 3;
 }
-.form-inner.open{
+.form-inner.open {
    background-color: rgba(0, 0, 0, 0.6);
    display: block;
 }
@@ -727,7 +761,7 @@ body.lock {
    transition: 0.4s all linear 0s;
    &__body {
       position: relative;
-      .loader-box.sending{
+      .loader-box.sending {
          position: absolute;
          top: 0;
          left: 0;
@@ -811,7 +845,6 @@ body.lock {
       border-bottom: 1px solid #000;
       width: 100%;
    }
-   
 
    &__button {
       background-color: transparent;
@@ -833,21 +866,21 @@ body.lock {
       margin-top: 5px;
       @media (orientation: landscape) and (max-height: 468px) {
          height: 50px;
-   }
+      }
    }
    @media (orientation: landscape) and (max-height: 468px) {
       transform: translate(-50%, -40%);
       width: 70%;
    }
-    @media (orientation: portrait) and (max-width: 408px) {
+   @media (orientation: portrait) and (max-width: 408px) {
       width: 70%;
    }
 }
-.form.open{
+.form.open {
    opacity: 1;
    visibility: visible;
 }
-.form__input:focus{
+.form__input:focus {
    box-shadow: 0 4px 4px -2px #000;
 }
 
@@ -863,8 +896,8 @@ body.lock {
 }
 .form__input._error {
    border-bottom: 1px solid red;
-   border-left:1px solid red;
-   border-right:1px solid red;
+   border-left: 1px solid red;
+   border-right: 1px solid red;
 }
 // ===============================================
 .social {
@@ -938,7 +971,7 @@ body.lock {
       overflow: hidden;
       fill: white;
       background-color: #665cac;
-      &::before{
+      &::before {
          content: none;
       }
    }
@@ -947,7 +980,7 @@ body.lock {
       overflow: hidden;
       fill: white;
       background-color: #665cac;
-      &::before{
+      &::before {
          content: none;
       }
    }
@@ -972,7 +1005,7 @@ body.lock {
       overflow: hidden;
       fill: white;
       background-color: #4ac959;
-      &::before{
+      &::before {
          content: none;
       }
    }
@@ -981,7 +1014,7 @@ body.lock {
       overflow: hidden;
       fill: white;
       background-color: #4ac959;
-      &::before{
+      &::before {
          content: none;
       }
    }
@@ -1039,7 +1072,7 @@ body.lock {
       overflow: hidden;
       fill: white;
       background-color: #2787f5;
-      &::before{
+      &::before {
          content: none;
       }
    }
@@ -1048,7 +1081,7 @@ body.lock {
       overflow: hidden;
       fill: white;
       background-color: #2787f5;
-      &::before{
+      &::before {
          content: none;
       }
    }

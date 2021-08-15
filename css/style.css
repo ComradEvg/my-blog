@@ -875,8 +875,8 @@ canvas {
 .card__img-box {
   position: absolute;
   right: 50%;
-  -webkit-transform: translateX(40%);
-          transform: translateX(40%);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   bottom: 0;
   height: 340px;
   width: 340px;
@@ -891,8 +891,8 @@ canvas {
 }
 @media (max-width: 600px) {
   .card__img-box {
-    height: 230px;
-    width: 230px;
+    height: 200px;
+    width: 200px;
   }
 }
 @media (max-width: 500px) {
@@ -900,14 +900,14 @@ canvas {
     position: relative;
     top: 0;
     left: 0;
-    -webkit-transform: translateX(-8%);
-            transform: translateX(-8%);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     margin: 0 auto;
   }
 }
 .card__img {
   display: block;
-  height: 105%;
+  height: 100%;
 }
 .card__marker {
   position: absolute;
@@ -937,18 +937,19 @@ canvas {
 .card__marker span .marker__svg {
   width: 90%;
   height: 90%;
-  -webkit-transform: rotateX(30deg) scale(-1, 1);
-          transform: rotateX(30deg) scale(-1, 1);
+  -webkit-transform: translate(20%, -10%) rotateX(30deg) scale(-1, 1);
+          transform: translate(20%, -10%) rotateX(30deg) scale(-1, 1);
 }
 @media (max-width: 500px) {
   .card__marker {
-    right: 60px;
+    right: 52px;
+    top: 60px;
   }
 }
 @media (max-width: 400px) {
   .card__marker {
-    right: 25px;
-    top: 50px;
+    right: 10px;
+    top: 60px;
   }
 }
 @media (max-width: 768px) {
@@ -1297,6 +1298,36 @@ canvas {
   top: 500px;
   position: absolute;
 }
+@media (orientation: portrait) and (max-width: 768px) {
+  .portfolio .anchor {
+    top: 30px;
+  }
+}
+@media (orientation: landscape) and (max-height: 768px) {
+  .portfolio .anchor {
+    top: 30px;
+  }
+}
+@media (orientation: portrait) and (max-width: 650px) {
+  .portfolio .anchor {
+    top: 300px;
+  }
+}
+@media (orientation: landscape) and (max-height: 650px) {
+  .portfolio .anchor {
+    top: 300px;
+  }
+}
+@media (orientation: portrait) and (max-width: 500px) {
+  .portfolio .anchor {
+    top: 530px;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .portfolio .anchor {
+    top: 530px;
+  }
+}
 
 .title {
   font-size: 34px;
@@ -1399,6 +1430,26 @@ canvas {
 }
 .contacts .anchor {
   top: -480px;
+}
+@media (orientation: portrait) and (max-width: 650px) {
+  .contacts .anchor {
+    top: 0px;
+  }
+}
+@media (orientation: landscape) and (max-height: 650px) {
+  .contacts .anchor {
+    top: 0px;
+  }
+}
+@media (orientation: portrait) and (max-width: 600px) {
+  .contacts .anchor {
+    top: -70px;
+  }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .contacts .anchor {
+    top: -70px;
+  }
 }
 
 .contacts-container {
