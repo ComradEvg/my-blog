@@ -66,7 +66,9 @@
         </symbol>
     </svg>
     <div class="wrapper" id="main">
-        <div class="preloader"><div class="loader"><span></span></div></div>
+        <div class="preloader">
+            <div class="loader"><span></span></div>
+        </div>
         <main class="page">
             <canvas id="sakura" height="100vh"></canvas>
             <div class="anchor"></div>
@@ -126,8 +128,8 @@
                                         </div>
                                     </div>
                                     <div class="card__marker marker">Нажми на <p>фото</p><span><svg class="marker__svg">
-                                        <use xlink: href="#arrow-for-about"></use>
-                                    </svg></span></div>
+                                                <use xlink: href="#arrow-for-about"></use>
+                                            </svg></span></div>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +143,7 @@
                             <div class="portfolio__column website">
                                 <a class="website__photo" href="#"><img src="img/SiteTruck.jpg" alt="SiteTruck"
                                         class="website__photo-img"></a>
-                                <a class="website__link" href="#">Truck Company</a>
+                                <a class="website__link" href="">Truck Company</a>
                             </div>
                         </div>
                     </div>
@@ -151,30 +153,37 @@
                     <div class="contacts-container">
                         <h3 class="title">Контакты</h3>
                         <p class="contacts__subtitle">Want to know more or just chat?
-                        You are welcome!</p>
-                        <button class="contacts__btn">Связаться</button>
-                        <div class="form">
-                            <form action="#" id="form" class="form__body">
-                                <div class='loader-box'id="loader-form"><div class="loaderform"><span></span></div></div>
-                                <h3 class="form__title">Отправка данных на почту</h3>
-                                <div class="form__item">
-                                    <label for="formName" class="form__label">Имя*:</label>
-                                    <input id="formName" type="text" name="name" class="form__input _req">
-                                </div>
-                                <div class="form__item">
-                                    <label for="formEmail" class="form__label">Email*:</label>
-                                    <input id="formEmail" type="text" name="email" class="form__input _req _email">
-                                </div>
-                                <div class="form__item">
+                            You are welcome!</p>
+                        <button class="contacts__btn" >Связаться</button>
+                        <div class="form-inner">
+                            <div class="form">
+                                <form action="#" id="form" class="form__body">
+                                    <div class='loader-box' id="loader-form">
+                                        <div class="loaderform"><span></span></div>
+                                    </div>
+                                    <h3 class="form__title">Отправка данных на почту</h3>
+                                    <div class="form__item ">
+                                        <input id="formName" type="text" name="name" class="form__input req"
+                                        autocomplete="off"
+                                        placeholder=" ">
+                                        <label for="formName" class="form__label">Имя*:</label>
+                                    </div>
+                                    <div class="form__item">
+                                        <input id="formEmail" type="text" name="email" class="form__input req email"
+                                        autocomplete="off" placeholder=" ">
+                                        <label for="formEmail" class="form__label">Email*:</label>
+                                    </div>
+                                    <div class="form__item">
+                                    <textarea name="message" id="formMessage" class="form__input" placeholder=" "></textarea> 
                                     <label for="formMessage" class="form__label">Сообщение:</label>
-                                    <textarea name="message" id="formMessage" class="form__input"></textarea>
-                                </div>
-                                <button type="submit" class="form__button">Отправить</button>
-                            </form>
+                                    </div>
+                                    <button type="submit" class="form__button">Отправить</button>
+                                </form>
+                        </div>
                         </div>
                         <ul class="contacts__social-list social">
-                            <li class="social__item">
-                                <a href="viber://add?number=+79275111076" class="social__link" target="_blank">
+                            <!-- <li class="social__item">
+                                <a href="https://msng.link/o/?79275111076=vi" class="social__link" target="_blank">
                                     <div class="viber-box box ">
                                         <svg>
                                             <use xlink: href="#viber"></use>
@@ -186,7 +195,7 @@
                                         </svg>
                                     </div>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="social__item">
                                 <a href="https://wa.me/79275111076?text=" class="social__link" target="_blank">
                                     <div class="whatsapp-box box">
@@ -227,7 +236,7 @@
                                             <use xlink: href="#vk"></use>
                                         </svg>
                                     </div>
-                                </a>   
+                                </a>
                             </li>
                         </ul>
                     </div>

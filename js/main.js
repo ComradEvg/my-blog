@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let formData = new FormData(form);
 
       if (error === 0) {
-         loaderform.classList.add('_sending');
+         loaderform.classList.add('sending');
          let response = await fetch('./sendmail.php', {
             method: 'POST',
             body: formData
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
             let result = await response.json();
             alert(result.message);
             form.reset();
-            loaderform.classList.remove('_sending');
+            loaderform.classList.remove('sending');
          }
          else {
-            alert("Ошибкааа");
-            loaderform.classList.remove('_sending');
+            alert("Ошибка");
+            loaderform.classList.remove('sending');
          }
       }
       else {
@@ -68,12 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
    function formValidate(form) {
       let error = 0;
-      let formReq = document.querySelectorAll('._req');
+      let formReq = document.querySelectorAll('.req');
       for (let index = 0; index < formReq.length; index++) {
          const input = formReq[index];
          formRemoveError(input);
 
-         if (input.classList.contains('_email')) {
+         if (input.classList.contains('email')) {
             if (emailTest(input)) {
                formAddError(input);
                error++;
@@ -116,7 +116,32 @@ document.addEventListener('DOMContentLoaded', function () {
       $('.card__marker').remove();
    });
 
+// POP-UP
+   const popupLinks = document.querySelector('.contacts__btn')
+   const lockPadding = document.querySelectorAll('.lock-padding')
 
+   let unlock = true;
+   popupLinks.addEventListener("click", function(e){
+      e.preventDefault();
+      const popup = document.querySelector('.form-inner');
+      const popupitem = document.querySelector('.form')
+      popupOpen(popup, popupitem);
+   });
+
+   function popupOpen(popup, popupitem){
+      if(popup && unlock){
+         popup.classList.add('open');
+         popupitem.classList.add('open');
+         popup.addEventListener("click", function(e){
+            if(!e.target.closest('.form__body')){
+               popup.classList.remove('open');
+               popupitem.classList.remove('open');
+            }
+         });
+      }
+   }
+
+// 
 
    $('.social__link').hover(function (event) {
       $(this).find('.box-bw').toggleClass('disactive-icon');

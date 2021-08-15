@@ -922,8 +922,6 @@ canvas {
   left: 0;
   width: 40px;
   height: 50px;
-  -webkit-transform: scale(-1, -1);
-          transform: scale(-1, -1);
   -webkit-animation-name: animation-marker;
           animation-name: animation-marker;
   -webkit-animation-timing-function: ease-in-out;
@@ -1250,22 +1248,22 @@ canvas {
 }
 @-webkit-keyframes animation-marker {
   0% {
-    -webkit-transform: rotate3d(-5, -5, -1, -50deg);
-            transform: rotate3d(-5, -5, -1, -50deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate3d(0, 5, 5, -30deg);
-            transform: rotate3d(0, 5, 5, -30deg);
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
   }
 }
 @keyframes animation-marker {
   0% {
-    -webkit-transform: rotate3d(-5, -5, -1, -50deg);
-            transform: rotate3d(-5, -5, -1, -50deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate3d(0, 5, 5, -30deg);
-            transform: rotate3d(0, 5, 5, -30deg);
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
   }
 }
 .portfolio {
@@ -1365,7 +1363,6 @@ canvas {
 
 .contacts {
   margin-bottom: 45px;
-  position: relative;
 }
 .contacts__subtitle {
   font-size: 18px;
@@ -1410,26 +1407,45 @@ canvas {
   padding: 0 10px;
 }
 
+.form-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  z-index: 3;
+}
+
+.form-inner.open {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
 .form {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
   font-size: 18px;
-  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  -webkit-backdrop-filter: blur(3.5px);
-          backdrop-filter: blur(3.5px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.4s all linear 0s;
+  transition: 0.4s all linear 0s;
 }
 .form__body {
   position: relative;
 }
-.form__body .loader-box {
+.form__body .loader-box.sending {
   position: absolute;
   top: 0;
   left: 0;
@@ -1450,14 +1466,14 @@ canvas {
   opacity: 0;
   visibility: hidden;
 }
-.form__body .loader-box .loaderform {
+.form__body .loader-box.sending .loaderform {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   -webkit-animation: anime-loader 2s linear infinite;
           animation: anime-loader 2s linear infinite;
 }
-.form__body .loader-box .loaderform::before {
+.form__body .loader-box.sending .loaderform::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1471,7 +1487,7 @@ canvas {
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
 }
-.form__body .loader-box .loaderform::after {
+.form__body .loader-box.sending .loaderform::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1486,7 +1502,7 @@ canvas {
   -webkit-box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
           box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3, 0 0 30px #2196f3;
 }
-.form__body .loader-box .loaderform span {
+.form__body .loader-box.sending .loaderform span {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -1498,30 +1514,111 @@ canvas {
 .form__title {
   margin-bottom: 20px;
 }
+.form__item {
+  position: relative;
+}
+.form__label {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
 .form__input {
   padding: 0 20px;
   height: 40px;
   margin-bottom: 10px;
   background-color: transparent;
+  border-bottom: 1px solid #000;
+  width: 100%;
+}
+.form__button {
+  background-color: transparent;
+  text-transform: uppercase;
   border: 1px solid #000;
+  border-radius: 20px;
+  height: 30px;
+  width: 130px;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .form textarea {
   resize: none;
-  padding: 20px 20px;
+  height: 100px;
+  padding: 10px 10px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+@media (orientation: landscape) and (max-height: 468px) {
+  .form textarea {
+    height: 50px;
+  }
+}
+@media (orientation: landscape) and (max-height: 468px) {
+  .form {
+    -webkit-transform: translate(-50%, -40%);
+            transform: translate(-50%, -40%);
+    width: 70%;
+  }
+}
+@media (orientation: portrait) and (max-width: 408px) {
+  .form {
+    width: 70%;
+  }
+}
+
+.form.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__input:focus {
+  -webkit-box-shadow: 0 4px 4px -2px #000;
+          box-shadow: 0 4px 4px -2px #000;
+}
+
+.form__input:focus ~ .form__label {
+  top: -11px;
+  left: 0;
+  font-size: 13px;
+}
+
+.form__input:not(:-moz-placeholder-shown) ~ .form__label {
+  top: -11px;
+  left: 0;
+  font-size: 13px;
+}
+
+.form__input:not(:-ms-input-placeholder) ~ .form__label {
+  top: -11px;
+  left: 0;
+  font-size: 13px;
+}
+
+.form__input:not(:placeholder-shown) ~ .form__label {
+  top: -11px;
+  left: 0;
+  font-size: 13px;
 }
 
 .form__input._error {
-  -webkit-box-shadow: 0 0 15px red;
-          box-shadow: 0 0 15px red;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
 }
 
 .social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -1600,6 +1697,9 @@ canvas {
     fill: white;
     background-color: #665cac;
   }
+  .viber-box::before {
+    content: none;
+  }
 }
 @media (orientation: landscape) and (max-height: 768px) {
   .viber-box {
@@ -1607,6 +1707,9 @@ canvas {
     overflow: hidden;
     fill: white;
     background-color: #665cac;
+  }
+  .viber-box::before {
+    content: none;
   }
 }
 
@@ -1632,6 +1735,9 @@ canvas {
     fill: white;
     background-color: #4ac959;
   }
+  .whatsapp-box::before {
+    content: none;
+  }
 }
 @media (orientation: landscape) and (max-height: 768px) {
   .whatsapp-box {
@@ -1639,6 +1745,9 @@ canvas {
     overflow: hidden;
     fill: white;
     background-color: #4ac959;
+  }
+  .whatsapp-box::before {
+    content: none;
   }
 }
 
@@ -1701,6 +1810,9 @@ canvas {
     fill: white;
     background-color: #2787f5;
   }
+  .vk-box::before {
+    content: none;
+  }
 }
 @media (orientation: landscape) and (max-height: 768px) {
   .vk-box {
@@ -1708,6 +1820,9 @@ canvas {
     overflow: hidden;
     fill: white;
     background-color: #2787f5;
+  }
+  .vk-box::before {
+    content: none;
   }
 }
 
@@ -1721,12 +1836,16 @@ canvas {
 }
 @media (orientation: portrait) and (max-width: 768px) {
   .active-icon {
-    display: none;
+    z-index: -1;
+    -webkit-transition: none;
+    transition: none;
   }
 }
 @media (orientation: landscape) and (max-height: 768px) {
   .active-icon {
-    display: none;
+    z-index: -1;
+    -webkit-transition: none;
+    transition: none;
   }
 }
 
