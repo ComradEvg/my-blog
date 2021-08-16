@@ -1,0 +1,102 @@
+.footer {
+   border-top: 2px solid rgba(255, 255, 255, 0.5);
+   color: rgba(255, 255, 255, 0.8);
+   font-size: 13px;
+   letter-spacing: 0.2px;
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      @media (max-width: 768px) {
+         display: block;
+         position: relative;
+      }
+      @media (max-width: 460px) {
+         font-size: 11px;
+         position: static;
+         display: flex;
+         justify-content: center;
+      }
+   }
+
+   &__column {
+      margin-top: 10px;
+      @media (max-width: 460px) {
+         margin: 0;
+      }
+   }
+}
+.body {
+   &__link-tel {
+      padding-left: 22px;
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 1px;
+         left: 0;
+         width: 18px;
+         height: 18px;
+         display: block;
+         background: url(../img/icon/telephone.svg) 0 0 no-repeat;
+      }
+      @media (max-width: 460px) {
+         &::before {
+            top: -2px;
+         }
+      }
+   }
+
+   &__quote {
+      text-align: left;
+      span {
+         margin-top: 5px;
+         display: block;
+         text-align: right;
+      }
+      @media (max-width: 768px) {
+         position: absolute;
+         top: 50%;
+         right: 0px;
+         transform: translateY(-75%);
+         text-align: right;
+      }
+      @media (max-width: 550px) {
+         font-size: 10px;
+      }
+      @media (max-width: 460px) {
+         display: none;
+      }
+   }
+   &__link-mail {
+      padding-right: 22px;
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         top: 1px;
+         right: 0;
+         width: 18px;
+         height: 18px;
+         display: block;
+         background: url(../img/icon/email.svg) 0 0 / cover no-repeat;
+      }
+      @media (max-width: 768px) {
+         padding-left: 22px;
+         &::after {
+            left: 0;
+         }
+      }
+      @media (max-width: 460px) {
+         &::after {
+            top: -3px;
+         }
+      }
+   }
+}
+.mail {
+   @media (max-width: 460px) {
+      order: -1;
+   }
+}

@@ -765,7 +765,7 @@ body.lock {
    transition: 0.4s all linear 0s;
    &__body {
       position: relative;
-      .loader-box.sending {
+      .loader-box {
          position: absolute;
          top: 0;
          left: 0;
@@ -779,6 +779,7 @@ body.lock {
          z-index: 2;
          opacity: 0;
          visibility: hidden;
+         transform: scale(1.1);
          .loaderform {
             width: 40px;
             height: 40px;
@@ -902,6 +903,10 @@ body.lock {
    border-bottom: 1px solid red;
    border-left: 1px solid red;
    border-right: 1px solid red;
+}
+.sending{
+   opacity: 1;
+   visibility: visible;
 }
 // ===============================================
 .social {
