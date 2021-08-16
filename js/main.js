@@ -1,4 +1,10 @@
 "use strick"
+
+$(function () {
+   $('.preloader, .loader').addClass('complete');
+   setTimeout(function () { $('.preloader').remove() }, 1000)
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 
    document.querySelectorAll('a.menu__link').forEach(link => {
@@ -18,19 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
       })
    });
 
-   window.addEventListener('scroll', () => {
-      let scrollDistance = window.scrollY - document.querySelector('.header').clientHeight;
-      document.querySelectorAll('.anchor').forEach((el, i) => {
-         if (el.offsetTop <= scrollDistance) {
-            document.querySelectorAll('.menu__list a').forEach((el) => {
-               if (el.classList.contains('active-nav')) {
-                  el.classList.remove('active-nav');
-               }
-            });
-            document.querySelectorAll('.menu__list li')[i].querySelector('a').classList.add('active-nav');
-         }
-      });
-   });
+   // window.addEventListener('scroll', () => {
+   //    let scrollDistance = window.scrollY - document.querySelector('.header').clientHeight;
+   //    document.querySelectorAll('.anchor').forEach((el, i) => {
+   //       if (el.offsetTop <= scrollDistance) {
+   //          document.querySelectorAll('.menu__list a').forEach((el) => {
+   //             if (el.classList.contains('active-nav')) {
+   //                el.classList.remove('active-nav');
+   //             }
+   //          });
+   //          document.querySelectorAll('.menu__list li')[i].querySelector('a').classList.add('active-nav');
+   //       }
+   //    });
+   // });
 
    const form = document.getElementById("form");
    const loaderform = document.getElementById('loader-form');
@@ -101,14 +107,10 @@ document.addEventListener('DOMContentLoaded', function () {
       return !/^\w+([\.-]?\w+)*@\w([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
    }
 
-   $(function () {
-      $('.preloader, .loader').addClass('complete');
-      setTimeout(function () { $('.preloader').remove() }, 1000)
-   });
-
-   $('.burger').on('click', function (event) {
+   $('.burger,.header__bg').on('click', function (event) {
       $('.burger,.header,.menu,.header__row').toggleClass('active');
       $('body').toggleClass('lock');
+
    });
 
    $('.card,#about-me-nav').on('click', function (event) {
@@ -118,18 +120,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // POP-UP
    const popupLinks = document.querySelector('.contacts__btn')
-   const lockPadding = document.querySelectorAll('.lock-padding')
 
-   let unlock = true;
    popupLinks.addEventListener("click", function(e){
       e.preventDefault();
       const popup = document.querySelector('.form-inner');
       const popupitem = document.querySelector('.form')
-      popupOpen(popup, popupitem);
+      popupSwitch(popup, popupitem);
    });
 
-   function popupOpen(popup, popupitem){
-      if(popup && unlock){
+   function popupSwitch(popup, popupitem){
+      if(popup){
          popup.classList.add('open');
          popupitem.classList.add('open');
          popup.addEventListener("click", function(e){

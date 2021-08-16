@@ -559,7 +559,7 @@ canvas {
   .menu__list {
     display: block;
     top: 20%;
-    left: 10%;
+    left: 5%;
     font-size: 35px;
   }
 }
@@ -567,7 +567,7 @@ canvas {
   .menu__list {
     display: block;
     top: 20%;
-    left: 10%;
+    left: 5%;
     font-size: 35px;
   }
 }
@@ -659,6 +659,8 @@ canvas {
     backdrop-filter: blur(19.5px);
     -webkit-backdrop-filter: blur(19.5px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 @media (orientation: landscape) and (max-height: 768px) {
@@ -672,6 +674,8 @@ canvas {
     backdrop-filter: blur(19.5px);
     -webkit-backdrop-filter: blur(19.5px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -681,6 +685,14 @@ canvas {
 
 .header__row.active {
   display: block;
+}
+.header__row.active .header__bg {
+  position: relative;
+  top: 0;
+  left: -150%;
+  height: 100vh;
+  width: 200%;
+  z-index: -1;
 }
 
 .active-nav {
@@ -692,6 +704,22 @@ canvas {
 
 .section {
   margin-bottom: 50px;
+  position: relative;
+}
+.section::after {
+  content: "";
+  height: 2px;
+  width: 45%;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 400px) {
+  .section::after {
+    bottom: -20px;
+  }
 }
 @media (max-width: 400px) {
   .section {
@@ -891,11 +919,17 @@ canvas {
 }
 @media (max-width: 600px) {
   .card__img-box {
-    height: 200px;
-    width: 200px;
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    margin: 0 auto;
+    height: 220px;
+    width: 220px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .card__img-box {
     position: relative;
     top: 0;
@@ -903,6 +937,8 @@ canvas {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     margin: 0 auto;
+    height: 200px;
+    width: 200px;
   }
 }
 .card__img {
@@ -960,16 +996,12 @@ canvas {
 }
 @media (max-width: 600px) {
   .card {
-    height: 240px;
-  }
-}
-@media (max-width: 500px) {
-  .card {
     height: auto;
     display: block;
     position: relative;
     width: 100%;
     overflow: visible;
+    margin: 0;
   }
 }
 
@@ -1000,33 +1032,24 @@ canvas {
 }
 @media (max-width: 600px) {
   .content-card__name {
-    margin-bottom: 25px;
-  }
-}
-@media (max-width: 500px) {
-  .content-card__name {
     font-size: 25px;
     visibility: visible;
     opacity: 0;
+    margin-bottom: 25px;
   }
 }
 .content-card__about {
-  font-size: 18px;
+  font-size: 10px;
   line-height: 22px;
   visibility: hidden;
 }
 @media (max-width: 768px) {
   .content-card__about {
-    font-size: 16px;
+    font-size: 10px;
     line-height: 20px;
   }
 }
 @media (max-width: 600px) {
-  .content-card__about {
-    font-size: 1px;
-  }
-}
-@media (max-width: 500px) {
   .content-card__about {
     font-size: 15px;
     visibility: visible;
@@ -1034,12 +1057,7 @@ canvas {
   }
 }
 .content-card__about p {
-  margin-bottom: 50px;
-}
-@media (max-width: 1050px) {
-  .content-card__about p {
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
 }
 @media (max-width: 768px) {
   .content-card__about p {
@@ -1052,7 +1070,7 @@ canvas {
   }
 }
 .content-card__about :last-child {
-  margin: 0;
+  margin: 5px;
 }
 @media (max-width: 1050px) {
   .content-card {
@@ -1070,11 +1088,6 @@ canvas {
   }
 }
 @media (max-width: 600px) {
-  .content-card {
-    padding-left: 10%;
-  }
-}
-@media (max-width: 500px) {
   .content-card {
     position: absolute;
     top: 0;
@@ -1103,11 +1116,6 @@ canvas {
 }
 @media (max-width: 600px) {
   .card.active-card {
-    height: 300px;
-  }
-}
-@media (max-width: 500px) {
-  .card.active-card {
     height: auto;
     display: block;
     position: static;
@@ -1131,7 +1139,7 @@ canvas {
     right: 10%;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .card__img-box.active-card {
     position: relative;
     right: 0;
@@ -1159,7 +1167,7 @@ canvas {
     font-size: 25px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .content-card.active-card .content-card__name {
     -webkit-transition: opacity 0.1s linear 1.3s;
     transition: opacity 0.1s linear 1.3s;
@@ -1167,35 +1175,27 @@ canvas {
   }
 }
 .content-card.active-card .content-card__about {
+  font-size: 16px;
   -webkit-transition: visibility 0.2s linear 0.3s;
   transition: visibility 0.2s linear 0.3s;
   visibility: visible;
 }
 @media (max-width: 600px) {
   .content-card.active-card .content-card__about {
-    font-size: 15px;
-  }
-}
-@media (max-width: 500px) {
-  .content-card.active-card .content-card__about {
     -webkit-transition: opacity 0.1s linear 1.3s;
     transition: opacity 0.1s linear 1.3s;
     opacity: 1;
+    font-size: 15px;
   }
 }
 @media (max-width: 768px) {
   .content-card.active-card {
     -webkit-transition: all 0s linear 0.3s;
     transition: all 0s linear 0.3s;
-    padding-left: 45%;
+    padding-left: 38%;
   }
 }
 @media (max-width: 600px) {
-  .content-card.active-card {
-    padding-left: 50%;
-  }
-}
-@media (max-width: 500px) {
   .content-card.active-card {
     padding: 0px;
     -webkit-animation-name: animation-about;
@@ -1318,12 +1318,12 @@ canvas {
     top: 300px;
   }
 }
-@media (orientation: portrait) and (max-width: 500px) {
+@media (orientation: portrait) and (max-width: 400px) {
   .portfolio .anchor {
     top: 530px;
   }
 }
-@media (orientation: landscape) and (max-height: 500px) {
+@media (orientation: landscape) and (max-height: 400px) {
   .portfolio .anchor {
     top: 530px;
   }
@@ -1429,7 +1429,7 @@ canvas {
   margin-top: 85px;
 }
 .contacts .anchor {
-  top: -480px;
+  top: -500px;
 }
 @media (orientation: portrait) and (max-width: 650px) {
   .contacts .anchor {
@@ -1490,6 +1490,8 @@ canvas {
   border-radius: 10px;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-transition: 0.4s all linear 0s;
   transition: 0.4s all linear 0s;
 }
