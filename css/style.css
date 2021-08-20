@@ -1345,6 +1345,8 @@ canvas {
   }
 }
 .website__photo {
+  -webkit-transform: scaleY(0.9);
+          transform: scaleY(0.9);
   margin-bottom: 45px;
   display: block;
 }

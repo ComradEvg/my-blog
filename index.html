@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"
+xmlns:fb="http://ogp.me/ns/fb#">
 
 <head>
     <link rel="shortcut icon" href="img/icon/Webicon.png" type="imgage/png">
@@ -8,6 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <meta name="author" content="Evgeny Stekolnikov">
+    <meta property="og:title" content="Веб-разработчик - Стекольников Е.В.">
+    <meta property="og:description" content="Информация обо мне, портфолио, контакты">
+    <meta property="og:url" content="https://stekolnikovblog.ru/">
+    <meta property="og:image" content="img/link-image.png">
+    <meta property="og:type" content="website">
     <title>My Blog</title>
 
 </head>
@@ -140,9 +146,11 @@
                         <h3 class="title">Портфолио</h3>
                         <div class="portfolio__row">
                             <div class="portfolio__column website">
-                                <a class="website__photo" href="#"><img src="img/SiteTruck.jpg" alt="SiteTruck"
-                                        class="website__photo-img"></a>
-                                <a class="website__link" href="">Truck Company</a>
+                                <a class="website__photo" href="../skyline/public_html/skyline.html">
+                                    <picture><source srcset="img/Skyline-mobile.jpg" media="(max-width: 767px)"><img src="img/Skyline.jpg" alt="Skyline"
+                                        class="website__photo-img">
+                                    </picture></a>
+                                <a class="website__link" href="">Nissan Skyline</a>
                             </div>
                         </div>
                     </div>
